@@ -40,3 +40,7 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background-image: linear-gradient(90deg, #cdffd8, #94b9ff);
+}
