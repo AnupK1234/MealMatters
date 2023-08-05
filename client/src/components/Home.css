@@ -1,0 +1,26 @@
+.parent {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding-bottom: 50px;
+    border-bottom: 4px dashed rgb(0, 0, 0);
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 1 / 5 / 2 / 6;
+}
+
+.div3 {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.head {
+    font-size: 1.6em;
+    font-weight:500;
+}
