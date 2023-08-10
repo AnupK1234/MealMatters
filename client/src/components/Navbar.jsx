@@ -18,7 +18,7 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a href="#" className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]">
+              <a href="" className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]">
                 About Us
               </a>
             </li>

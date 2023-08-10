@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -33,13 +33,13 @@
   }
 }
 
-.card {
+/* .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
-}
+} */
 
 body {
   background-image: linear-gradient(90deg, #cdffd8, #94b9ff);
