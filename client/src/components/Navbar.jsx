@@ -15,9 +15,10 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/" className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]">
+              {/* <Link to="/donate" className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]">
                 Donate
-              </Link>
+              </Link> */}
+              <a href="https://rzp.io/l/aK0bXinyA" className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]">Donate</a>
             </li>
             <li>
               <Link to="/about" className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]">
@@ -30,7 +31,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="bg-[#ff914d] border-2 border-dotted rounded-full px-3 py-1 w-35">
-                <Link to="/" className="text-[#000000] hover:text-blue-700 text-[1.25rem] font-[600]">
+                <Link to="/login" className="text-[#000000] hover:text-blue-700 text-[1.25rem] font-[600]">
                   Login &gt;
                 </Link>
             </li>
