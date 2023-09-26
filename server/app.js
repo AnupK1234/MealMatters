@@ -1,11 +1,21 @@
 // import 
 const express = require("express");
-require("dotenv").config(); // loading environment variables from a .env file into the process.env
+const cors = require('cors')
+const dotenv = require("dotenv").config(); // loading environment variables from a .env file into the process.env
+const mongoose = require("mongoose")
 
 // app
 const app = express();
 
 // db
+mongoose.set('strictQuery', false)
+mongoose.connect(process.env.MONGO_URL)
+.then(() => {
+    console.log("DB is successfully connected");
+  })
+  .catch((error) => {
+    console.error("Error connecting to the database:", error);
+  });
 
 // middleware
 
@@ -13,10 +23,9 @@ const app = express();
 
 
 // port
-const port = process.env.PORT || 8080;
 
 
 // listener
-const server = app.listen(port, () => 
-    console.log(`Server is running on port ${port}`)
+const server = app.listen(process.env.PORT, () => 
+    console.log(`Server is running on port ${process.env.PORT}`)
 );
