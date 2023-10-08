@@ -1,8 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react'
 import Navbar from "./Navbar";
+import classes from './login.module.css'
 
 export default function Login() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState(false)
+  const navigate = useNavigate()
+
+  const handleLogin = async(e) => {
+    e.preventDefault()
+
+    try {
+      const res = await fetch(`http://localhost:5000/auth/login`, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({email, password})
+      })
+
+      const data = await res.json()
+      console.log(data)
+      // dispatch(login(data)) // {userInfo, token}
+      // navigate("/")
+      
+    } catch (error) {
+      setError(true)
+      setTimeout(() => {
+        setError(false)
+      }, 3000)
+    }
+}
+
   return (
     <>
     <Navbar />
@@ -16,8 +48,8 @@ export default function Login() {
               <div className="flex items-center">
                 <i className="fa fa-user text-lg mr-5"></i>
                 <input
-                  type="text"
-                  placeholder="Username "
+                  type="email"
+                  placeholder="Email"
                   k
                   className="w-95 h-15 bg-transparent border-none outline-none border-b-2 "
                   autoComplete="off"
@@ -53,6 +85,12 @@ export default function Login() {
           </div>
         </div>
       </div>
+      {/* Error if wrong credentials entered */}
+      {
+            error && <div className={classes.errorMessageCon}><div className={classes.errorMessage}>
+                 Wrong credentials! Try different ones
+            </div></div>
+      }
     </>
   );
 }

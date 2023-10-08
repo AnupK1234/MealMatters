@@ -1,28 +1,27 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import './App.css';
-import Home from "./components/Home.jsx";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home.jsx";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import FoodDetails from "./components/foodDetails/foodDetails";
+import FoodCatalog from "./components/foodCatalog/FoodCatalog";
 
 
 
 function App() {
 
   return (
-    // <>
-    //   {/* <Home /> */}
-    //   {/* <About /> */}
-    //   <Contact />
-    // </>
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='contact' element={<Contact />} />
       <Route path='/about' element={<About />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
+      <Route path='/food/:id' element={<FoodDetails />} />
+      <Route path='/foods/:id' element={<FoodCatalog />} />
     </Routes>    
   );
 }

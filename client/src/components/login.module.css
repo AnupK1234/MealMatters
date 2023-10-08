@@ -1,0 +1,18 @@
+.errorMessageCon{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 5rem;
+    transform: translate(-50%, 20%);
+}
+.errorMessage{
+    height: 70px;
+    width: 250px;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    font-weight: 500;
+}
