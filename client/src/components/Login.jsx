@@ -1,39 +1,44 @@
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react'
+import {useDispatch} from 'react-redux'
 import Navbar from "./Navbar";
 import classes from './login.module.css'
+import { login } from '../redux/authSlice'
+
 
 export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState(false)
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
+
   const handleLogin = async(e) => {
-    e.preventDefault()
+      e.preventDefault()
 
-    try {
-      const res = await fetch(`http://localhost:5000/auth/login`, {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({email, password})
-      })
+      try {
+        const res = await fetch(`http://localhost:5000/auth/login`, {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: "POST",
+          body: JSON.stringify({email, password})
+        })
 
-      const data = await res.json()
-      console.log(data)
-      // dispatch(login(data)) // {userInfo, token}
-      // navigate("/")
-      
-    } catch (error) {
-      setError(true)
-      setTimeout(() => {
-        setError(false)
-      }, 3000)
-    }
-}
+        const data = await res.json()
+        console.log(data)
+        dispatch(login(data)) // {userInfo, token}
+        navigate("/")
+        
+      } catch (error) {
+        setError(true)
+        setTimeout(() => {
+          setError(false)
+        }, 3000)
+      }
+  }
 
   return (
     <>
@@ -44,15 +49,15 @@ export default function Login() {
             <h2 className="text-4xl font-semibold text-center mb-10">
               Welcome to MealMatters
             </h2>
+            <form onSubmit={handleLogin}>
             <div className="mb-5">
               <div className="flex items-center">
                 <i className="fa fa-user text-lg mr-5"></i>
                 <input
                   type="email"
                   placeholder="Email"
-                  k
-                  className="w-95 h-15 bg-transparent border-none outline-none border-b-2 "
-                  autoComplete="off"
+                  className="w-95 h-15 bg-transparent border-none outline-none border-b-2"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -63,14 +68,14 @@ export default function Login() {
                   type="password"
                   placeholder="Password"
                   className="w-95 h-10 bg-transparent border-none outline-none border-b-2 border-purple-600 text-lg"
-                  autoComplete="off"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
             <div className="mb-5 flex flex-col items-center">
-              <a className="w-300 h-12 cursor-pointer font-semibold text-lg text-center border-2 border-purple-600 rounded-[25px] bg-pink-300 flex items-center justify-center my-2 px-5 hover:text-white hover:bg-purple-600">
-                Submit
-              </a>
+              <button className="w-300 h-12 cursor-pointer font-semibold text-lg text-center border-2 border-purple-600 rounded-[25px] bg-pink-300 flex items-center justify-center my-2 px-5 hover:text-white hover:bg-purple-600">
+                Login
+              </button>
               <h4 className="mt-1 text-base font-bold pb-2">OR</h4>
               <a className="w-300 h-12 cursor-pointer font-semibold text-lg text-center border-2 border-purple-600 rounded-[25px] bg-blue-300 flex items-center justify-center my-2 px-5 hover:text-white hover:bg-blue-600">
                 Continue With Google
@@ -82,6 +87,7 @@ export default function Login() {
                 SignUp
               </Link>
             </div>
+            </form>
           </div>
         </div>
       </div>

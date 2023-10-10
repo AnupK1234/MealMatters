@@ -6,7 +6,7 @@ export default function Navbar() {
     <>
       <nav className="bg-transparent"> {/*bg-transparent*/}
         <div className="container mx-auto flex justify-between px-4 py-3">
-          <img src="logo.png" alt="My Website Logo" className="w-10 h-10" />
+          <img src="" alt="My Website Logo" className="w-10 h-10" />
 
           <ul className="flex space-x-36">
             <li>
