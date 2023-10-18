@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+
+  const handleChange = (e) => {
+    const selectedOption = e.target.value;
+    window.location.href = selectedOption;
+  };
+
   return (
     <>
       <nav className="bg-transparent"> {/*bg-transparent*/}
@@ -10,9 +16,11 @@ export default function Navbar() {
 
           <ul className="flex space-x-36">
             <li>
-              <Link to="/" className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]">
-                Mission
-              </Link>
+              <select className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]" onChange={handleChange}>
+                <option value="/">User</option>
+                <option value="/dashboard">Dashboard</option>
+                <option value="/inventory">Inventory</option>
+              </select>
             </li>
             <li>
               {/* <Link to="/donate" className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]">

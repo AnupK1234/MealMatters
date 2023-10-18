@@ -30,7 +30,14 @@ export default function Login() {
         const data = await res.json()
         console.log(data)
         dispatch(login(data)) // {userInfo, token}
-        navigate("/")
+        if (res.status === 200) {
+          navigate('/');
+        } else {
+          setError(true);
+          setTimeout(() => {
+            setError(false);
+          }, 3000);
+        }
         
       } catch (error) {
         setError(true)
