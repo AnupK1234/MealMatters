@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import { getAll, search } from "../../services/foodService";
 import Thumbnail from "../Thumbnail/Thumbnail";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Search from "../Search/Search";
 
 const initialState = { foods: [] };
@@ -20,6 +20,7 @@ export default function Inventory() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { foods } = state;
   const { searchTerm } = useParams("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadFoods = searchTerm ? search(searchTerm) : getAll();
@@ -28,8 +29,12 @@ export default function Inventory() {
     loadFoods.then(foods => dispatch({type: 'FOODS_LOADED', payload: foods}));
   }, [searchTerm])
 
+  function moveBack() {
+    navigate('/')
+  }
   return (
     <>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={moveBack}>Navigate Back</button>
         <Search/>
         <Thumbnail foods={foods} />
     </>

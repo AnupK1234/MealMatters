@@ -1,9 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+  
+  function moveBack() {
+    navigate('/')
+  }
+
   return (
     <>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={moveBack}>Navigate Back</button>
+
       <div className="bg-white overflow-hidden w-100 h-[910px]">
         <div className="relative w-[1218px] h-[924px] left-[-65px]">
           <img
@@ -32,7 +41,7 @@ export default function Dashboard() {
             Home
           </Link>
           <div className="absolute w-[130px] top-[180px] left-[126px] [font-family:'Miriam_Libre-Regular',Helvetica] font-normal text-white text-[20px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
-            MLHS
+            John
           </div>
           <img
             className="absolute w-[316px] h-[83px] top-[55px] left-[65px]"
@@ -53,9 +62,6 @@ export default function Dashboard() {
             alt="Ml"
             src="https://c.animaapp.com/kbYzlNEe/img/ml-1@2x.png"
           />
-          <div className="w-[130px] top-[204px] left-[126px] [font-family:'Miriam_Libre-Regular',Helvetica] font-normal text-white text-[10px] absolute text-center tracking-[0] leading-[normal]">
-            Mountain Lakes
-          </div>
           <div className="absolute w-[175px] h-[30px] top-[326px] left-[881px] bg-[#f4bfad]" />
           <img
             className="top-[243px] absolute w-[243px] h-px left-[88px] object-cover"
