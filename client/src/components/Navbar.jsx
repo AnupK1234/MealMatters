@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import Logo from '../assets/Logo-Ic.png';
 
 export default function Navbar() {
   const { isAuthenticated, logout } = useAuth0();
@@ -19,7 +20,7 @@ export default function Navbar() {
         {" "}
         {/*bg-transparent*/}
         <div className="container mx-auto flex justify-between px-4 py-3">
-          <img src="" alt="My Website Logo" className="w-10 h-10" />
+          <img src={Logo} alt="My Website Logo" className="w-14 h-14 ml-5 border-2 border-sky-500 rounded-full" />
 
           <ul className="flex space-x-36">
             {isAuthenticated && (

@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/Navbar.jsx";
 import HP1 from '../assets/HomePage1.png';
-import HP2 from '../assets/HomePage2.png';
+import HP2 from '../assets/HomePage2.1.png';
 import HP3 from '../assets/HomePage3.png';
-import HP4 from '../assets/HomePage4.png';
+import HP4 from '../assets/Snap-1.png';
 import Footer from "./Footer.jsx";
 import './Home.css';
 
@@ -17,14 +17,21 @@ function Home() {
           alt="Image 1"
           width={`${480}rem`}
           height={`${480}rem`}
-          className="absolute -left-8 bottom-0"
+          className="absolute -left-4 bottom-0"
         />
         <img
           src={HP2}
           alt="Image 2"
-          width={`${380}rem`}
-          height={`${380}rem`}
-          className="absolute left-1/3 -bottom-20"
+          width={`${440}rem`}
+          height={`${440}rem`}
+          className="absolute left-1/3 mt-80"
+        />
+        <img
+          src={HP4}
+          alt="Image 3"
+          width={`${600}rem`}
+          height={`${600}rem`}
+          className="absolute right-24 mt-30"
         />
       </div>
 
