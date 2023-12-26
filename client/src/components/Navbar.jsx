@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import Logo from '../assets/Logo-Ic.png';
+import Logo from "../assets/Logo-Ic.png";
 
 export default function Navbar() {
   const { isAuthenticated, logout } = useAuth0();
@@ -11,7 +11,7 @@ export default function Navbar() {
     window.location.href = selectedOption;
   };
 
-  const auth = localStorage.getItem('user');
+  const auth = localStorage.getItem("user");
   console.log(auth);
 
   return (
@@ -20,31 +20,32 @@ export default function Navbar() {
         {" "}
         {/*bg-transparent*/}
         <div className="container mx-auto flex justify-between px-4 py-3">
-          <img src={Logo} alt="My Website Logo" className="w-14 h-14 ml-5 border-2 border-sky-500 rounded-full" />
+          <img
+            src={Logo}
+            alt="My Website Logo"
+            className="w-14 h-14 ml-5 border-2 border-sky-500 rounded-full"
+          />
 
           <ul className="flex space-x-36">
-            {isAuthenticated && (
-              <>
-                <li>
-                  <select
-                    className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
-                    onChange={handleChange}
-                  >
-                    <option value="/">User</option>
-                    <option value="/dashboard">Dashboard</option>
-                    <option value="/inventory">Inventory</option>
-                  </select>
-                </li>
-                <li>
-                  <a
-                    href="https://rzp.io/l/aK0bXinyA"
-                    className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
-                  >
-                    Donate
-                  </a>
-                </li>
-              </>
-            )}
+            <li>
+              <select
+                className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
+                onChange={handleChange}
+              >
+                <option value="/">User</option>
+                <option value="/dashboard">Dashboard</option>
+                <option value="/inventory">Inventory</option>
+              </select>
+            </li>
+            <li>
+              <a
+                href="https://rzp.io/l/aK0bXinyA"
+                className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
+              >
+                Donate
+              </a>
+            </li>
+
             <li>
               <Link
                 to="/about"
