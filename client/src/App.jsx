@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home.jsx";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import FoodDetails from "./components/foodDetails/foodDetails";
+import FoodDetails from "./components/foodDetails/FoodDetails";
 import FoodCatalog from "./components/foodCatalog/FoodCatalog";
 import Dashboard from "./components/dashboard/Dashboard";
 import Dashboard1 from "./components/dashboard/Dashboard1";
