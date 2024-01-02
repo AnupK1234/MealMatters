@@ -1,14 +1,17 @@
 // import 
 const express = require("express");
 const cors = require('cors')
-const dotenv = require("dotenv").config(); // loading environment variables from a .env file into the process.env
+const dotenv = require("dotenv"); // loading environment variables from a .env file into the process.env
 const mongoose = require("mongoose")
 const authController = require('./controllers/authController')
 const productController = require('./controllers/productController');
 const uploadController = require("./controllers/uploadController");
+const contactFormController = require("./controllers/contactFormController.js")
 
 // app
 const app = express();
+
+dotenv.config()
 
 // db
 mongoose.set('strictQuery', false)
@@ -27,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/auth', authController)
 app.use('/product', productController)
 app.use('/upload', uploadController)
+app.use('/contact-us', contactFormController)
 
 // listener
 const server = app.listen(process.env.PORT, () => 

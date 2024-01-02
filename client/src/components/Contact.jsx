@@ -1,8 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { contactUsSchema } from "../formSchema/ContactUsFormSchema";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function Contact() {
+
+  const [isSubmitted, setSubmitted] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(contactUsSchema),
+    mode: "onChange",
+  });
+
+  const onSubmit = async(data , e) => {
+    // console.log("working" , data)
+    setSubmitted(true)
+    e.preventDefault();
+      try {
+        const res = await fetch(`http://localhost:5000/contact-us`, {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: "POST",
+          body: JSON.stringify(data)
+        })
+        const formSubmitted = await res.json()
+        if(formSubmitted.statusCode === 200){
+          reset()
+          alert("form submitted")
+          
+        }
+        else{
+          console.log(formSubmitted.message)
+        }   
+      }
+      catch(error){
+        console.log(error)
+      }
+      setSubmitted(false)  
+  }
+
+
   return (
     <>
     <Navbar />
@@ -13,24 +58,31 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-            <form action="https://formspree.io/f/xbjvgolr" method="POST">
+            <form method="POST" onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-4">
                 <label htmlFor="Name" className="block text-lg font-medium mb-2">Name</label>
-                <input type="text" name="Name" id="Name" className="w-full border border-gray-300 rounded-md p-2" />
+                <input type="text" name="Name" id="Name" className="w-full border border-gray-300 rounded-md p-2" 
+                {...register("name")}/>
               </div>
+               {errors?.name?.message && <p className="text-red-500 mb-2 text-base">{errors?.name?.message}</p>}
               <div className="mb-4">
                 <label htmlFor="Email" className="block text-lg font-medium mb-2">Email</label>
-                <input type="email" name="Email" id="Email"className="w-full border border-gray-300 rounded-md p-2" />
+                <input type="email" name="Email" id="Email"className="w-full border border-gray-300 rounded-md p-2" 
+                {...register("email")}/>
               </div>
+              {errors?.email?.message && <p className="text-red-500 mb-2 text-base">{errors?.email?.message}</p>}
               <div className="mb-4">
                 <label htmlFor="Subject" className="block text-lg font-medium mb-2">Subject</label>
-                <input type="text" name="Subject" id="Subject" className="w-full border border-gray-300 rounded-md p-2" />
+                <input type="text" name="Subject" id="Subject" className="w-full border border-gray-300 rounded-md p-2" 
+                {...register("subject")}/>
               </div>
+              {errors?.subject?.message && <p className="text-red-500 mb-2 text-base">{errors?.subject?.message}</p>}
               <div className="mb-4">
                 <label htmlFor="Message" className="block text-lg font-medium mb-2">Message</label>
-                <textarea name="Message" id="Message" className="w-full border border-gray-300 rounded-md p-2" rows="4"></textarea>
+                <textarea name="Message" id="Message" className="w-full border border-gray-300 rounded-md p-2" rows="4"
+                {...register("message")}></textarea>
               </div>
-              <button type="submit" className="bg-blue-500 text-white py-3 px-5 rounded-md hover:bg-blue-600 w-25 text-xl">Submit</button>
+              <button type="submit" className="bg-blue-500 text-white py-3 px-5 rounded-md hover:bg-blue-600 w-25 text-xl">{isSubmitted ? 'Submitting' : "Submit"}</button>
             </form>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6">
