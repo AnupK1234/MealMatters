@@ -1,0 +1,34 @@
+## Code Of Conduct-MealMatters
+
+# Our Pledge
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+# Our Standards
+Examples of behavior that contributes to a positive environment for our community include:
+
+1. Demonstrating empathy and kindness toward other people
+2. Being respectful of differing opinions, viewpoints, and experiences
+3. Giving and gracefully accepting constructive feedback
+4. Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
+5. Focusing on what is best not just for us as individuals, but for the overall community
+
+Examples of unacceptable behavior include:
+1. The use of sexualized language or imagery, and sexual attention or advances
+2. Trolling, insulting or derogatory comments, and personal or political attacks
+3. Public or private harassment
+4. Publishing others' private information, such as a physical or email address, without their explicit permission
+5. Other conduct which could reasonably be considered inappropriate in a professional setting
+ 
+# Our Responsibilities
+Project maintainers are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any instances of unacceptable behavior.
+
+Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behavior that they deem inappropriate, threatening, offensive, or harmful.
+
+# Scope
+This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement . All complaints will be reviewed and investigated promptly and fairly.
+
+Attribution
+This Code of Conduct is adapted from the Contributor Covenant, version 1.4, available at http://contributor-covenant.org/version/1/4
