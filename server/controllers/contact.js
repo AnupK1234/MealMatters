@@ -1,8 +1,6 @@
-const contactFormController = require("express").Router()
 const Contact = require("../model/Contact.js")
 
-
-contactFormController.post("/" , async(req , res) => {
+exports.createContact = async(req , res) => {
    try{
        if(req.body.name && req.body.email && req.body.subject){
            const newLead = {
@@ -30,7 +28,4 @@ contactFormController.post("/" , async(req , res) => {
         console.log(error.message)
         res.status(500).json({message: error.message})
     }
-})
-
-
-module.exports = contactFormController;
+}
