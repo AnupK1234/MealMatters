@@ -19,7 +19,7 @@ export default function Navbar() {
       <nav className="bg-transparent">
         {" "}
         {/*bg-transparent*/}
-        <div className="container mx-auto flex justify-between px-4 py-3">
+        <div className="container mx-auto flex justify-between px-4 py-3 items-center">
           <img
             src={Logo}
             alt="My Website Logo"
@@ -29,7 +29,7 @@ export default function Navbar() {
           <ul className="flex space-x-36">
             <li>
               <select
-                className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
+                className="text-[#000000] rounded-md py-1 px-2 hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
                 onChange={handleChange}
               >
                 <option value="/">User</option>
@@ -63,10 +63,10 @@ export default function Navbar() {
               </Link>
             </li>
             {!isAuthenticated ? (
-              <li className="bg-[#ff914d] border-2 border-dotted rounded-full px-3 py-1 w-35">
+              <li className="bg-[#ff914d] border-2 border-dotted  rounded-full px-3 py-1 w-35">
                 <Link
                   to="/login"
-                  className="text-[#000000] hover:text-blue-700 text-[1.25rem] font-[600]"
+                  className="text-[#000000]  hover:text-blue-700 text-[1.25rem] font-[600]"
                 >
                   Login &gt;
                 </Link>
