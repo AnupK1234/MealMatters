@@ -3,11 +3,14 @@
 **Related Issues:**
 [List any related issues or reference them using the syntax `#issue_number`.]
 
-Fixes #(issue number)
+Fixes #issue number
 
 **Description:**
 [Provide a brief description of your changes.]
 
+ 
+ Note: Do [x] to select the below checkbox 
+ 
 **Checklist:**
 - [ ] I have tested my changes.
 - [ ] My code follows the project's coding standards.
