@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React,{ useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../redux/authSlice';
@@ -50,7 +50,7 @@ export default function Login() {
     <>
       <Navbar />
       <div className="flex justify-center items-center h-screen bg-gradient-to-r font-sans">
-        <div className="relative w-full max-w-md bg-white p-10 rounded-lg">
+        <div className="relative w-full max-w-md bg-white p-10 rounded-lg border border-black hover:border-2 ">
           <h2 className="text-4xl font-semibold text-center mb-10 text-black">
             Welcome to MealMatters
           </h2>
