@@ -1,24 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Logo from "../assets/Logo-Ic.png";
 
 export default function Navbar() {
   const { isAuthenticated, logout } = useAuth0();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (e) => {
     const selectedOption = e.target.value;
     window.location.href = selectedOption;
   };
 
-  const auth = localStorage.getItem("user");
-  console.log(auth);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
       <nav className="bg-transparent">
-        {" "}
-        {/*bg-transparent*/}
         <div className="container mx-auto flex justify-between px-4 py-3 items-center">
           <img
             src={Logo}
@@ -28,14 +28,35 @@ export default function Navbar() {
 
           <ul className="flex space-x-36">
             <li>
-              <select
-                className="text-[#000000] rounded-md py-1 px-2 hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
-                onChange={handleChange}
+              <div
+                className="relative inline-block"
+                onMouseEnter={toggleDropdown}
+                onMouseLeave={toggleDropdown}
               >
-                <option value="/">User</option>
-                <option value="/dashboard">Dashboard</option>
-                <option value="/inventory">Inventory</option>
-              </select>
+                <select
+                  className="text-[#000000] rounded-md py-1 px-2 hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
+                  onChange={handleChange}
+                  onFocus={toggleDropdown}
+                  onBlur={toggleDropdown}
+                >
+                  <option value="/">User</option>
+                  <option value="/dashboard">Dashboard</option>
+                  <option value="/inventory">Inventory</option>
+                </select>
+                {isOpen && (
+                  <div className="absolute mt-1 w-32 bg-white shadow-lg rounded-md">
+                    <Link to="/" className="block px-4 py-2 text-sm text-gray-700">
+                      User
+                    </Link>
+                    <Link to="/dashboard" className="block px-4 py-2 text-sm text-gray-700">
+                      Dashboard
+                    </Link>
+                    <Link to="/inventory" className="block px-4 py-2 text-sm text-gray-700">
+                      Inventory
+                    </Link>
+                  </div>
+                )}
+              </div>
             </li>
             <li>
               <a
@@ -45,7 +66,6 @@ export default function Navbar() {
                 Donate
               </a>
             </li>
-
             <li>
               <Link
                 to="/about"
@@ -72,15 +92,17 @@ export default function Navbar() {
                 </Link>
               </li>
             ) : (
-              <button
-                type="button"
-                className="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-                onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
-                }
-              >
-                Logout
-              </button>
+              <li>
+                <button
+                  type="button"
+                  className="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  onClick={() =>
+                    logout({ logoutParams: { returnTo: window.location.origin } })
+                  }
+                >
+                  Logout
+                </button>
+              </li>
             )}
           </ul>
         </div>
