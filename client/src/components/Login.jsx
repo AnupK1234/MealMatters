@@ -57,11 +57,11 @@ export default function Login() {
           <form onSubmit={handleLogin}>
             <div className="mb-5">
               <div className="flex items-center">
-                <i className="fa fa-user text-lg mr-3 text-white"></i>
+                <i className="fa fa-user text-lg mr-3 text-black"></i>
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full h-12 bg-transparent border-none outline-none border-b-2 text-white"
+                  className="w-full h-12 bg-transparent border-none outline-none border-b-2 text-black"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
