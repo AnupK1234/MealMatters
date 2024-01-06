@@ -41,8 +41,7 @@ export default function Navbar() {
                   onBlur={toggleDropdown}
                 >
                   <option value="/">User</option>
-                  <option value="/dashboard">Dashboard</option>
-                  <option value="/inventory">Inventory</option>
+                
                 </select>
                 {isOpen && (
                   <div className="absolute mt-1 w-32 bg-white shadow-lg rounded-md">
