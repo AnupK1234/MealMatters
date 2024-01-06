@@ -20,12 +20,13 @@ export default function Navbar() {
         {" "}
         {/*bg-transparent*/}
         <div className="container mx-auto flex justify-between px-4 py-3">
-          <img
-            src={Logo}
-            alt="My Website Logo"
-            className="w-14 h-14 ml-5 border-2 border-sky-500 rounded-full"
-          />
-
+          <Link to={'/'}>
+            <img
+              src={Logo}
+              alt="My Website Logo"
+              className="w-14 h-14 ml-5 border-2 border-sky-500 rounded-full cursor-pointer	"
+            />
+          </Link>
           <ul className="flex space-x-36">
             <li>
               <select
