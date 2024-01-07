@@ -29,6 +29,7 @@ export default function Login() {
         })
 
         const data = await res.json()
+        localStorage.setItem('user', JSON.stringify(data.others));
         console.log(data)
         dispatch(login(data)) // {userInfo, token}
         if (res.status === 200) {
