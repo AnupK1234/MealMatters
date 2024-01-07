@@ -1,9 +1,10 @@
 import React from "react";
-import { useState } from 'react'
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { register } from "../redux/authSlice";
 import { useDispatch } from "react-redux";
-import classes from './login.module.css'
+import classes from "./login.module.css";
+import logo from "../assets/Logo-Ic.png";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
@@ -13,6 +14,12 @@ export default function Signup() {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log({
+    username,
+    email,
+    password,
+    phone,
+  });
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -39,120 +46,127 @@ export default function Signup() {
 
   return (
     <>
-      <div className="flex justify-center items-center h-screen bg-gradient-to-r from-yellow-200 to-pink-400 font-sans">
-        <div className="relative w-2/5 h-4/5  bg-white-400 flex justify-center border-4 ">
-          <div className="absolute bg-red-100 inset-1.5 p-10 ">
-            <h2 className="text-4xl font-semibold text-center mb-5">
-              Welcome to MealMatters
-            </h2>
-            <form onSubmit={handleSignup}>
-              <div className="flex items-center">
-                <div className="mb-6">
-                  <div className="static items-center">
-                    <input
-                      type="text"
-                      placeholder=" Name "
-                      className="placeholder-black w-99 h-15 color-red bg-red-200 border-b-2 border-pink-500 text-lg outline-none"
-                      required
-                      onChange={(e) => setUsername(e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-5">
-                  <div className="inline-block inset-y-20 right-10 w-65 ">
-                    <i className="fa fa-user text-lg mr-6"></i>
-                    <input
-                      type="number"
-                      placeholder=" Phone "
-                      className="placeholder-black w-95 h-15 color-red bg-red-200 border-b-2 border-pink-500 text-lg  outline-none  "
-                      required
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="mb-5">
-                <input
-                  type="email"
-                  id="email"
-                  className="   border-b-2 border-pink-500
-                text-red-500 block p-1.5  placeholder-black
-                dark:text-black dark:focus:border-red-50 w-80 h-15 
-                color-red bg-red-200  text-lg  outline-none "
-                  placeholder=" Email "
-                  required
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="mb-5">
-                <input
-                  type="password"
-                  id="password"
-                  className="   border-b-2 border-pink-500
-                text-red-500 block p-1.5  placeholder-black
-                dark:text-black dark:focus:border-red-50 w-80 h-15 
-                color-red bg-red-200  text-lg  outline-none "
-                  placeholder="Password"
-                  required
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-
-              <div className="flex items-start mb-6">
-                <div className="flex items-center h-5">
-                  <input
-                    id="remember"
-                    type="checkbox"
-                    value=""
-                    className="bg-red-20 border border-red-200 text-red-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-red-200 dark:border-red-200 dark:placeholder-red-200 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required
-                  />
-                </div>
-                <label
-                  htmlFor="remember"
-                  className="ml-3 text-rm font-medium text-black dark:text-black"
-                >
-                  I agree with the{" "}
-                  <a
-                    href="#"
-                    className="text-blue-600 hover:underline dark:text-blue-500"
-                  >
-                    {" "}
-                    terms and conditions
-                  </a>
-                </label>
-              </div>
-
-              <div className="mb-5 flex flex-col items-center">
-                <button className="w-400 h-9 cursor-pointer font-semibold text-lg text-center border-2 border-pink-600 rounded-[25px] bg-pink-300 flex items-center justify-center my-2 px-5 hover:text-white hover:bg-blue-600">
-                  SignUp
-                </button>
-                <h4 className="mt-1 text-base font-bold pb-2">OR</h4>
-                <a className="w-300 h-12 cursor-pointer font-semibold text-lg text-center border-2 border-red-300 rounded-[25px] bg-blue-300 flex items-center justify-center my-2 px-5 hover:text-white hover:bg-blue-600">
-                  Continue With Google
-                </a>
-              </div>
-            </form>
-            <div className="flex justify-between">
-              <a className="text-lg cursor-pointer">Forgot Password ?</a>
-              <Link
-                to="/login"
-                className="text-[#000000] hover:text-blue-700 hover:underline text-[1.25rem] font-[600]"
-              >
-                Login
-              </Link>
-            </div>
-            {/* Error if wrong credentials entered */}
-            {error && (
-              <div className={classes.errorMessageCon}>
-                <div className={classes.errorMessage}>
-                  Wrong credentials! Try different ones
-                </div>
-              </div>
-            )}
+      <div className="h-screen w-full flex items-center justify-center">
+        <div className="h-4/6 w-full max-w-md bg-white rounded-lg flex flex-col justify-between px-8  md:px-16 py-4">
+          <div className="self-center flex items-end pt-2 sm:pb-6">
+            <img src={logo} alt="logo" className="h-16 w-16" />
+            <h3 className="text-2xl font-semibold">Meal Matters</h3>
           </div>
+          <form
+            onSubmit={handleSignup}
+            className="flex flex-col gap-2.5 max-w-md self-center w-full"
+          >
+            <div class="relative">
+              <input
+                type="text"
+                id="name"
+                class="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
+                required
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <label
+                for="name"
+                class="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >
+                Name
+              </label>
+            </div>
+
+            <div class="relative">
+              <input
+                type="text"
+                id="phone"
+                class="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
+                required
+                onChange={(e) => setPhone(e.target.value)}
+              />
+              <label
+                for="phone"
+                class="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >
+                Phone
+              </label>
+            </div>
+
+            <div class="relative">
+              <input
+                type="text"
+                id="email"
+                class="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label
+                for="email"
+                class="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >
+                Email
+              </label>
+            </div>
+
+            <div class="relative">
+              <input
+                type="text"
+                id="password"
+                class="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label
+                for="password"
+                class="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+              >
+                Password
+              </label>
+            </div>
+            <a className="self-start text-xs -mt-1 hover:text-blue-600">
+              Forgot Password ?
+            </a>
+
+            <div className="flex items-center">
+              <div className="flex items-center">
+                <input id="remember" type="checkbox" value="" required />
+              </div>
+              <label
+                htmlFor="remember"
+                className="ml-3 text-xs font-medium text-black dark:text-black"
+              >
+                I agree with the{" "}
+                <a
+                  href="#"
+                  className="text-blue-600 hover:underline dark:text-blue-500"
+                >
+                  {" "}
+                  terms and conditions
+                </a>
+              </label>
+            </div>
+            <div className="flex flex-col gap-2 py-5">
+              <button className="w-full text-xs sm:text-base hover:bg-sky-100 transition duration-300 font-semibold border-2 rounded-md hover:shadow-md p-2 ">
+                Sign up
+              </button>
+              <a className="w-full text-xs sm:text-base hover:bg-black/90 transition duration-300  bg-black text-white font-semibold border-2 rounded-md hover:shadow-md p-2 ">
+                Continue With Google
+              </a>
+              <div className="text-black text-xs self-start">
+                Already have an account ?{" "}
+                <Link
+                  to="/login"
+                  className="text-[#000000]  hover:text-blue-700 hover:underline"
+                >
+                  Login
+                </Link>
+              </div>
+            </div>
+          </form>
+          {error && (
+            <div className={classes.errorMessageCon}>
+              <div className={classes.errorMessage}>
+                {" "}
+                Wrong credentials! Try different ones
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
