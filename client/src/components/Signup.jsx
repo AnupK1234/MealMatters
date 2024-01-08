@@ -14,12 +14,6 @@ export default function Signup() {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log({
-    username,
-    email,
-    password,
-    phone,
-  });
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -56,65 +50,65 @@ export default function Signup() {
             onSubmit={handleSignup}
             className="flex flex-col gap-2.5 max-w-md self-center w-full"
           >
-            <div class="relative">
+            <div className="relative">
               <input
                 type="text"
                 id="name"
-                class="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
+                className="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
                 required
                 onChange={(e) => setUsername(e.target.value)}
               />
               <label
                 for="name"
-                class="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                className="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Name
               </label>
             </div>
 
-            <div class="relative">
+            <div className="relative">
               <input
                 type="text"
                 id="phone"
-                class="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
+                className="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
                 required
                 onChange={(e) => setPhone(e.target.value)}
               />
               <label
                 for="phone"
-                class="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                className="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Phone
               </label>
             </div>
 
-            <div class="relative">
+            <div className="relative">
               <input
                 type="text"
                 id="email"
-                class="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
+                className="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
               <label
                 for="email"
-                class="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                className="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Email
               </label>
             </div>
 
-            <div class="relative">
+            <div className="relative">
               <input
                 type="text"
                 id="password"
-                class="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
+                className="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
               <label
                 for="password"
-                class="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                className="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Password
               </label>
