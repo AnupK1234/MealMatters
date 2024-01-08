@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useReducer } from "react";
 import { getAll, search } from "../../services/foodService";
 import Thumbnail from "../Thumbnail/Thumbnail";
