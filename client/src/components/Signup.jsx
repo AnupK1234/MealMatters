@@ -68,7 +68,7 @@ export default function Signup() {
 
             <div className="relative">
               <input
-                type="text"
+                type="number"
                 id="phone"
                 className="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
                 required
@@ -84,7 +84,7 @@ export default function Signup() {
 
             <div className="relative">
               <input
-                type="text"
+                type="email"
                 id="email"
                 className="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
                 required
@@ -100,7 +100,7 @@ export default function Signup() {
 
             <div className="relative">
               <input
-                type="text"
+                type="password"
                 id="password"
                 className="block px-4 p-2 w-full text-sm text-gray-900 bg-transparent rounded-md border-2 appearance-none  focus:outline-none focus:ring-0 peer"
                 required
