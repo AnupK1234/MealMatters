@@ -24,3 +24,43 @@
     font-size: 1.6em;
     font-weight:500;
 }
+.d1{
+   
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d2{
+   
+    height: 50%;
+    width: 100%;
+    
+}
+.d3{
+   
+    height: 100%;
+    width: 30%; 
+}
+.d4{
+    
+    height: 100%;
+    width: 50%; 
+}
+.img{
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    
+}
+.ig
+{
+    height: 100%;
+    width: 100%;
+}
+.ig1{
+    height: 100%;
+    width: 40%;
+    align-items: center;
+}

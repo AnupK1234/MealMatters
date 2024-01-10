@@ -11,28 +11,20 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div style={{ position: "static" }}>
-        <img
-          src={HP1}
-          alt="Image 1"
-          width={`${480}rem`}
-          height={`${480}rem`}
-          className="absolute -left-4 bottom-0"
-        />
-        <img
-          src={HP2}
-          alt="Image 2"
-          width={`${440}rem`}
-          height={`${440}rem`}
-          className="absolute left-1/3 mt-80"
-        />
-        <img
-          src={HP4}
-          alt="Image 3"
-          width={`${600}rem`}
-          height={`${600}rem`}
-          className="absolute right-24 mt-30"
-        />
+      <div className="img">
+        <div className="d1">
+          <div className="d3">
+            <img src={HP1} alt="Image 1" className="ig" />
+          </div>
+          <div className="d4">
+            <img src={HP4} alt="Image 3" className="ig" />
+          </div>
+        </div>
+        <div className="d2">
+          <center>
+            <img src={HP2} alt="Image 2" className="ig1" />
+          </center>
+        </div>
       </div>
 
       <div style={{ paddingTop: "700px" }}>

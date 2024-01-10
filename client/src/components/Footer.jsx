@@ -10,9 +10,20 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 export default function Footer() {
   return (
-    <footer className="text-center lg:text-left mt-10 w-full text-neutral-700 dark:text-neutral-200" style={{color:"black"}}>
+    <footer
+      className="text-center lg:text-left mt-10 w-full text-neutral-700 dark:text-neutral-200"
+      style={{ color: "black" }}
+    >
       <div className="container p-6 mx-auto">
-        <div className="grid md:grid-cols-5 lg:grid-cols-5">
+        <div
+          className="grid md:grid-cols-5 lg:grid-cols-5"
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <div className="mb-6 justify-self-start">
             <ul className="mb-0 list-none">
               <li>
@@ -22,7 +33,7 @@ export default function Footer() {
                 <Link
                   to="/"
                   className="mission-link text-lg text-neutral-800 dark:text-neutral-200 relative before:content-[''] before:block before:w-full before:h-1 before:bg-gray-200 before:absolute before:top-full before:left-1/2 before:transform before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full hover:before:w-0 hover:before:h-0 hover:before:transition-all hover:before:duration-300"
-                  style={{ fontFamily: "cursive",color:"black" }}
+                  style={{ fontFamily: "cursive", color: "black" }}
                 >
                   MealMatters
                 </Link>
@@ -90,7 +101,7 @@ export default function Footer() {
                 <Link
                   to="/"
                   className="partners-link text-lg text-neutral-800 dark:text-neutral-200 relative "
-                style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   Partners
                 </Link>
@@ -99,7 +110,7 @@ export default function Footer() {
                 <Link
                   to="/about"
                   className="about-link text-lg text-neutral-800 dark:text-neutral-200 "
-                  style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   About Us
                 </Link>
@@ -108,7 +119,7 @@ export default function Footer() {
                 <Link
                   to="/contact"
                   className="contact-link text-lg text-neutral-800 dark:text-neutral-200 "
-                  style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   Contact Us
                 </Link>
@@ -126,7 +137,7 @@ export default function Footer() {
                 <Link
                   to="/"
                   className="partners-link text-lg text-neutral-800 dark:text-neutral-200 "
-                  style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   Partners
                 </Link>
@@ -135,7 +146,7 @@ export default function Footer() {
                 <Link
                   to="/about"
                   className="about-link text-lg text-neutral-800 dark:text-neutral-200 "
-                  style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   About Us
                 </Link>
@@ -144,7 +155,7 @@ export default function Footer() {
                 <Link
                   to="/contact"
                   className="contact-link text-lg text-neutral-800 dark:text-neutral-200 "
-                  style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   Contact Us
                 </Link>
@@ -162,7 +173,7 @@ export default function Footer() {
                 <Link
                   to="/"
                   className="partners-link text-lg text-neutral-800 dark:text-neutral-200 "
-                  style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   Partners
                 </Link>
@@ -171,7 +182,7 @@ export default function Footer() {
                 <Link
                   to="/about"
                   className="about-link text-lg text-neutral-800 dark:text-neutral-200 "
-                  style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   About Us
                 </Link>
@@ -180,7 +191,7 @@ export default function Footer() {
                 <Link
                   to="/contact"
                   className="contact-link text-lg text-neutral-800 dark:text-neutral-200 "
-                  style={{fontSize:"16px",color:"rgb(105, 105, 105)"}}
+                  style={{ fontSize: "16px", color: "rgb(105, 105, 105)" }}
                 >
                   Contact Us
                 </Link>
@@ -202,7 +213,6 @@ export default function Footer() {
                 <a
                   href="mailto:contact@mealmatters.com"
                   className="ml-2 text-lg text-neutral-800 dark:text-neutral-200 hover:text-blue-600 hover:underline hover:bg-gray-100 transition duration-300 ease-in-out"
-                
                 >
                   contact@mealmatters.com
                 </a>
