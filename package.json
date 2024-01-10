@@ -1,0 +1,24 @@
+{
+  "name": "mealmatters",
+  "version": "1.0.0",
+  "description": "MealMatters is a webapp designed to overcome student food insecurity by connecting students with nearby restaurants that provide free meals.",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm start --prefix server",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnupK1234/MealMatters.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AnupK1234/MealMatters/issues"
+  },
+  "homepage": "https://github.com/AnupK1234/MealMatters#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
