@@ -1,8 +1,8 @@
 <h1 align="center">MealMatters</h1>
 
 ## Introduction:
-MealMatters is a webapp designed to overcome student food insecurity by connecting students with nearby restaurants that provide free meals. The webapp facilitates student registration, enabling them to view a list of nearby restaurants offering free meals and request coupons from the organization. Donors can also register for an account and make donations to the organization, which utilizes these funds to reimburse restaurants for meals provided to students. MealMatters aims to increase student access to free meals, alleviate the financial burden of food insecurity, raise awareness of the issue, and encourage support for student food insecurity initiatives.
 
+MealMatters is a webapp designed to overcome student food insecurity by connecting students with nearby restaurants that provide free meals. The webapp facilitates student registration, enabling them to view a list of nearby restaurants offering free meals and request coupons from the organization. Donors can also register for an account and make donations to the organization, which utilizes these funds to reimburse restaurants for meals provided to students. MealMatters aims to increase student access to free meals, alleviate the financial burden of food insecurity, raise awareness of the issue, and encourage support for student food insecurity initiatives.
 
 <p align="center">Tech Stack:</p>
 <p align="center">
@@ -15,11 +15,14 @@ MealMatters is a webapp designed to overcome student food insecurity by connecti
 </p>
 
 ## Configure and run on local environment
+
 **Project directory/folder structure:**
-* client (Frontend) : This folder contains all the code related to Frontend part.
-* server (Backend) : This folder contains all the code related to Backend part.
+
+- client (Frontend) : This folder contains all the code related to Frontend part.
+- server (Backend) : This folder contains all the code related to Backend part.
 
 **Setting up project locally (Installation) :**
+
 1. Fork the repository
 
 2. Clone Your Forked Repository:
@@ -27,61 +30,40 @@ MealMatters is a webapp designed to overcome student food insecurity by connecti
 ```sh
 git clone https://github.com/<your_username>/MealMatters.git
 ```
-**Client (Frontend)** 
 
-3. Navigate to the Client Directory:
-
-```sh
-cd MealMatters/client
-```
-
-4. Install Dependencies:
+3. Install Dependencies:
 
 ```sh
+cd Mealmatters
 npm install
 ```
 
-5. Start the Application:
+4. Start the Application:
 
 ```sh
-npm run dev
-```
-The client will be running on http://localhost:5173/ in your browser.  
-
-**Server (Backend)**
-
-1. Navigate to the Server Directory:
-
-```sh
-cd MealMatters/server
+npm run start
 ```
 
-2. Install Dependencies:
+The client will be running on http://localhost:5173/ in your browser.
 
-```sh
-npm install
-```
-
-3. Start the server
-
-```sh
-npm start
-```
-**Note :** Create a ```.env``` file in the root of ```server``` directory and add the following entities in that .env file
+**Note :** Create a `.env` file in the root of `server` directory and add the following entities in that .env file
 
 ```sh
 MONGO_URL = mongodb+srv:<YOUR_MONGODB-ATLAS_CONNECTION_STRING_URL>
 PORT = 5000
 JWT_SECRET = <YOUR_SECRET_KEY>
 ```
+
 Refer this image for MONGODB-ATLAS_CONNECTION_STRING_URL : [Link](https://postimg.cc/6TWbMF1q)
 
 ## How to contribute 👨‍💻
-- Have a look at [CONTRIBUTING.md](.github/CONTRIBUTING.md) for contribution guidelines.  
+
+- Have a look at [CONTRIBUTING.md](.github/CONTRIBUTING.md) for contribution guidelines.
 
 ## Connect with Project Admin :
+
 [Anup Khismatrao](https://linktr.ee/anupkhismatrao)
 
-## License 🛡️ 
+## License 🛡️
 
 MealMatters is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
