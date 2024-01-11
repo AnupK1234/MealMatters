@@ -14,6 +14,9 @@ export const ForgotPassword = () => {
       })
       const data =res.json()
       console.log(data);
+      if(res.status==201){
+        alert("Email sent")
+      }
   }
   catch(error){
     console.log(error);
