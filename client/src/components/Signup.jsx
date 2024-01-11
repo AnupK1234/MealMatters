@@ -59,7 +59,7 @@ export default function Signup() {
                 onChange={(e) => setUsername(e.target.value)}
               />
               <label
-                for="name"
+                htmlFor="name"
                 className="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Name
@@ -75,7 +75,7 @@ export default function Signup() {
                 onChange={(e) => setPhone(e.target.value)}
               />
               <label
-                for="phone"
+                htmlFor="phone"
                 className="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Phone
@@ -91,7 +91,7 @@ export default function Signup() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <label
-                for="email"
+                htmlFor="email"
                 className="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Email
@@ -107,7 +107,7 @@ export default function Signup() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <label
-                for="password"
+                htmlFor="password"
                 className="absolute text-md bg-white text-gray-500 dark:text-black duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]  peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Password
