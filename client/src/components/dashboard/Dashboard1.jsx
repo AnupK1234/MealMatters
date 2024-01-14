@@ -1,9 +1,10 @@
 import React from "react";
-
+import { Link, useNavigate } from 'react-router-dom';
 export default function Dashboard1() {
+  const navigate=useNavigate();
   return (
     <>
-      <div className="absolute w-[316px] h-[800px] bg-[#ffd900b4]">
+      <div className=" w-[300px] h-[750px] bg-[#406c5eb4] sticky">
         <div>
           <img
             className="absolute w-[316px] h-[83px]"
@@ -15,26 +16,34 @@ export default function Dashboard1() {
           </div>
         </div>
         <div className="absolute left-0 top-0">
-          <div className="w-[130px] top-[301px] left-[105px] [font-family:'Miriam_Libre-Regular',Helvetica] font-normal text-black text-[18px] absolute text-center tracking-[0] leading-[normal]">
+        <div className="ml-5 w-[260px] h-[1px] bg-white absolute top-[200px]"></div>
+          <button className="w-[130px] top-[250px] left-[85px] [font-family:'Miriam_Libre-Regular',Helvetica]  text-white text-[18px] absolute text-center tracking-[0] leading-[normal] font-semibold hover:scale-110 ">
             Home
-          </div>
-          <div className="absolute w-[130px] top-[381px] left-[117px] [font-family:'Miriam_Libre-Regular',Helvetica] font-normal  text-black text-[18px] text-center tracking-[0] leading-[normal]">
-            Students
-          </div>
-          <div className="absolute w-[130px] top-[544px] left-[117px] [font-family:'Miriam_Libre-Regular',Helvetica] font-normal text-black text-[18px] text-center tracking-[0] leading-[normal]">
-            Outreach
-          </div>
-          <div className="absolute w-[130px] top-[627px] left-[119px] [font-family:'Miriam_Libre-Regular',Helvetica] font-normal text-black text-[18px] text-center tracking-[0] leading-[normal]">
-            Inventory
-          </div>
-          <div className="absolute w-[130px] top-[461px] left-[111px] [font-family:'Miriam_Libre-Bold',Helvetica] font-bold text-black text-[18px] text-center tracking-[0] leading-[normal]">
-            Donors
-          </div>
-          <div className="absolute w-[130px] top-[765px] left-[111px] [font-family:'Miriam_Libre-Regular',Helvetica] font-normal text-black text-[18px] text-center tracking-[0] leading-[normal]">
-            Log out
-          </div>
+          </button>
+          <button className="absolute w-[130px] top-[320px] left-[85px] [font-family:'Miriam_Libre-Regular',Helvetica] font-semibold  text-white text-[18px] text-center tracking-[0] leading-[normal] hover:scale-110">
+          Profile
+          </button>
+          <button className="absolute w-[130px] top-[400px] left-[85px] [font-family:'Miriam_Libre-Regular',Helvetica] font-semibold text-white text-[18px] text-center tracking-[0] leading-[normal] hover:scale-110">
+          Donor
+          </button>
+          <button className="absolute w-[130px] top-[480px] left-[85px] [font-family:'Miriam_Libre-Regular',Helvetica] font-semibold text-white text-[18px] text-center tracking-[0] leading-[normal] hover:scale-110">
+           Outreach
+          </button>
+          <button className="absolute w-[130px] top-[560px] left-[85px] [font-family:'Miriam_Libre-Bold',Helvetica] font-semibold text-white text-[18px] text-center tracking-[0] leading-[normal] hover:scale-110" onClick={()=>{
+          navigate('/inventory')
+          }}>
+          Inventory
+          </button>
+          <div className="ml-5 w-[260px] h-[1px] bg-white absolute top-[640px]"></div>
+          <button className="absolute w-[130px] top-[690px] left-[85px] [font-family:'Miriam_Libre-Regular',Helvetica] font-semibold text-white text-[18px] text-center tracking-[0] leading-[normal] hover:scale-110 ">
+          Log out
+          </button>
         </div>
       </div>
     </>
   );
 }
+
+
+
+

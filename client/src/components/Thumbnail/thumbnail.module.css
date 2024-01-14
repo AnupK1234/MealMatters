@@ -9,13 +9,14 @@
 
     .box {
         background-color: rgb(255, 255, 255);
-        margin: 3px;
+        margin-right: 5px;
+        margin-bottom: 2rem;
         border-radius: 20px;
     }
 
     .list li a {
-        height: 22.5rem;
-        width: 20rem;
+        height: 18rem;
+        width: 15rem;
         border: 1px solid whitesmoke;
         border-radius: 1rem;
         margin: 0.5rem;
@@ -27,21 +28,21 @@
 
     .image {
         object-fit: cover;
-        height: 14.5rem;
+        height: 10rem;
     }
 
     .content {
         margin-top: 0.3rem;
         padding: 0.5rem 1rem;
         position: relative;
-        height: 7rem;
+        height: 6rem;
     }
 
     .favorite {
         position: absolute;
         top: 0.5rem;
         right: 1rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .favorite.not {
@@ -59,10 +60,10 @@
     }
 
     .origins span {
-        border-radius: 2rem;
+        border-radius: 1.5rem;
         background-color: whitesmoke;
         display: inline-block;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         color: grey;
         margin-right: 0.3rem;
         padding: 0 0.5rem;
@@ -74,7 +75,7 @@
     }
 
     .cook_time {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         flex: 3;
         text-align: right;
     }

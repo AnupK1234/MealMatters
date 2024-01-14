@@ -3,7 +3,7 @@ import { getAll, search } from "../../services/foodService";
 import Thumbnail from "../Thumbnail/Thumbnail";
 import { useNavigate, useParams } from "react-router-dom";
 import Search from "../Search/Search";
-
+import Dashboard1 from "../dashboard/Dashboard1";
 const initialState = { foods: [] };
 
 const reducer = (state, action) => {
@@ -34,10 +34,20 @@ export default function Inventory() {
   }
   return (
     <>
+        <div style={{ display: "grid", gridTemplateColumns: "316px 1fr" }}>
+        <Dashboard1/> 
+        <div style={{ marginLeft: "36px", padding: "20px" }}>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={moveBack}>Navigate Back</button>
         <Search/>
         <Thumbnail foods={foods} />
+        </div>
+        </div>
     </>
   );
 
 }
+
+
+
+
+
