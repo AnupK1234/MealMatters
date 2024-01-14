@@ -16,9 +16,7 @@ export default function Navbar() {
     const selectedOption = e.target.value;
     window.location.href = selectedOption;
   };
-
-  const auth = JSON.parse(localStorage.getItem("user"));
-  // console.log(auth);
+  const auth = localStorage.getItem("user") ? true : false;
 
   return (
     <>

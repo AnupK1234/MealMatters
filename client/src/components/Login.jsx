@@ -26,10 +26,10 @@ export default function Login() {
         body: JSON.stringify({ email, password })
       });
       const data = await res.json()
-      localStorage.setItem('user', JSON.stringify(data.others));
       console.log(data)
       dispatch(login(data)) // {userInfo, token}
       if (res.status === 200) {
+        localStorage.setItem('user', JSON.stringify(data.others));
         navigate('/');
       } else {
         setError(true);
