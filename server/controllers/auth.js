@@ -130,25 +130,30 @@ exports.resetPassword = async(req,res)=>{
 
 exports.updatePassword = async(req,res)=> {
     try {
-        const {user_id,password,c_password} = req.body;
+        const {password,c_password} = req.body;
+        let {token}= req.query 
+        token = decodeURIComponent(token)
+        console.log(token);
+        console.log(password)
+        console.log(c_password);
         // const resetData = await passwordReset.findOne({user_id});
-        const resetData = await passwordReset.findById(user_id);
+        const resetData = await passwordReset.findOne({token: token});
         console.log("Reset Data: ",resetData);
-        if(password!=c_password)
-        {
-            return res.status(401).json({msg: "Passwords aren't matching"})
-        }
+        // if(password!=c_password)
+        // {
+        //     return res.status(401).json({msg: "Passwords aren't matching"})
+        // }
         const hashedPassword=await bcrypt.hash(c_password,10);
-        await User.findByIdAndUpdate({_id: user_id},{
+        await User.findByIdAndUpdate({_id: resetData.user_id},{
             $set:{
                 password: hashedPassword
             }
         })
-        const userData = await User.findById(user_id);
+        const userData = await User.findById({_id: resetData.user_id});
         console.log("User Data: ",userData);
         const msg= `<p>Dear ${userData.username}, This is to confirm that the password for your account has been successfully changed.</p>`
         mailer.sendMail(userData.email,"Password updated successful",msg);
-        await passwordReset.deleteMany({user_id})
+        await passwordReset.deleteMany({_id: resetData.user_id})
         return res.status(200).json({ msg: "Password updated successfully" });
     } catch (error) {
         console.log('Error in updating the password : ', error);

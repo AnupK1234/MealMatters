@@ -12,11 +12,10 @@ export const ResetPassword = () => {
         console.log(token);
         const res = await fetch(`http://localhost:5000/auth/reset-password?token=${encodeURIComponent(token)}`,{
           headers: {  
-            Accept: 'application/json',
             'Content-Type': 'application/json',
           },
           method: "POST",
-          body: JSON.stringify({password,confirmPassword})
+          body: JSON.stringify({password: password,c_password: confirmPassword})
         })
         console.log("Response: ",res);
         console.log("Password: ",password);
