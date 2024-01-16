@@ -1,0 +1,26 @@
+# Dockerfile-backend
+
+# Use Node.js as the base image
+FROM node:20
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY server/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the server directory and the startup script
+COPY server/ ./
+COPY startup.sh ./
+
+# Make the script executable
+RUN chmod +x startup.sh
+
+# Expose the backend port
+EXPOSE 5002
+
+# Command to run the startup script
+CMD ["./startup.sh"]
