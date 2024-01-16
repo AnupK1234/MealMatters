@@ -25,11 +25,11 @@ export default function Login() {
         method: "POST",
         body: JSON.stringify({ email, password })
       });
-
-      const data = await res.json();
-      console.log(data);
-      dispatch(login(data)); // {userInfo, token}
+      const data = await res.json()
+      console.log(data)
+      dispatch(login(data)) // {userInfo, token}
       if (res.status === 200) {
+        localStorage.setItem('user', JSON.stringify(data.others));
         navigate('/');
       } else {
         setError(true);
@@ -39,7 +39,7 @@ export default function Login() {
       }
 
     } catch (error) {
-      setError(true);
+      setError(true)
       setTimeout(() => {
         setError(false);
       }, 3000);

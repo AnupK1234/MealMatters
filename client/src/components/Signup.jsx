@@ -27,6 +27,7 @@ export default function Signup() {
       });
 
       const data = await res.json();
+      localStorage.setItem('user', JSON.stringify(data));
       console.log(data);
       dispatch(register(data));
       navigate("/");
