@@ -11,7 +11,8 @@ import FoodCatalog from "./components/foodCatalog/FoodCatalog";
 import Dashboard from "./components/dashboard/Dashboard";
 import Dashboard1 from "./components/dashboard/Dashboard1";
 import Inventory from "./components/pages/Inventory";
-
+import {ForgotPassword} from "./components/ForgotPassword.jsx";
+import { ResetPassword } from "./components/ResetPassword.jsx";
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
       <Route path='/dashboard1' element={<Dashboard1 />} />
       <Route path='/inventory' element={<Inventory />} />
       <Route path='/search/:searchTerm' element={<Inventory />} />
-
+      <Route path='/forgot-password' element={<ForgotPassword/>}/>
+      <Route path='/reset-password' element={<ResetPassword/>}/>
       <Route path='/food/:id' element={<FoodDetails />} />
       <Route path='/foods/:id' element={<FoodCatalog />} />
     </Routes>    

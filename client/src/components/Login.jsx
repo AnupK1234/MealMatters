@@ -106,7 +106,7 @@ export default function Login() {
               </button>
             </div>
             <div className="flex justify-between">
-              <a className="text-sm text-gray-600 cursor-pointer">Forgot Password?</a>
+            <Link to="/forgot-password" className="text-sm text-gray-600 cursor-pointer">Forgot Password?</Link>
               <Link to="/signup" className="text-sm text-gray-600">
                 Sign Up
               </Link>
