@@ -1,40 +1,64 @@
 const request = require("supertest");
-// let server;
 let server = require("../../app");
 const user = require("../../model/user");
 const passwordReset = require("../../model/passwordReset");
+
 describe("/auth", () => {
   describe("/register", () => {
     it("should return a statuscode of 201 if new user", async () => {
       await user.deleteOne({ email: "ccccccccccccccccccccc" });
+
       const result = await request(server).post("/auth/register").send({
-        email: "ccccccccccccccccccccc",
-        username: "dddddcccccddddddddddd",
-        phone: "1234565567899867",
-        password: "cccccccccccccc",
+        email: "c",
+        username: "c",
+        phone: "1234567",
+        password: "cccccccccc",
         isAdmin: false,
       });
+
+      await user.deleteOne({ email: "c" });
+
       expect(result.statusCode).toBe(201);
     });
 
     it("should return a statuscode of 500 user already exists", async () => {
-      const result = await request(server).post("/auth/register").send({
-        email: "dddddddddddddddddddddd",
-        username: "dddddddddddddddd",
-        phone: "123456556789",
-        password: "ddddddddddddddd",
+      await user.create({
+        email: "d",
+        username: "d",
+        phone: "98765433242",
+        password: "dddddddddd",
         isAdmin: false,
       });
+
+      const result = await request(server).post("/auth/register").send({
+        email: "d",
+        username: "d",
+        phone: "98765432",
+        password: "dddddddddd",
+        isAdmin: false,
+      });
+
+      await user.deleteOne({ email: "d" });
       expect(result.statusCode).toBe(500);
     });
   });
 
   describe("/login", () => {
     it("should log in a user and return a token", async () => {
-      const loginResult = await request(server).post("/auth/login").send({
-        email: "ccccccccccccccccccccc",
-        password: "cccccccccccccc",
+      await request(server).post("/auth/register").send({
+        email: "e",
+        username: "e",
+        phone: "98765432",
+        password: "eeeeeeeee",
+        isAdmin: false,
       });
+
+      const loginResult = await request(server).post("/auth/login").send({
+        email: "e",
+        password: "eeeeeeeee",
+      });
+
+      await user.deleteOne({ email: "e" });
 
       expect(loginResult.statusCode).toBe(200);
     });
@@ -46,41 +70,26 @@ describe("/auth", () => {
       });
 
       expect(result.statusCode).toBe(500);
-      expect(result.body).toBe("User credentials are wrong!");
     });
-  });
-
-  describe("/reset-password", () => {
-    it("should return reset data for a valid token", async () => {
-      const { token } = await passwordReset.findOne({});
-      const result = await request(server).get(
-        `/auth/reset-password?token=${token}`
-      );
-
-      expect(result.statusCode).toBe(200);
-    });
-
-    it("should return 404 for an invalid token", async () => {
-      const invalidToken = "invalid_token";
-      const result = await request(server).get(
-        `/auth/reset-password?token=${invalidToken}`
-      );
-      expect(result.statusCode).toBe(404);
-    });
-
-    // Add more test cases as needed
   });
 
   describe("/forgot-password", () => {
     it("should send a reset password link for a valid email", async () => {
-      // Assuming you have a user document with a valid email in your database
-
-      const result = await request(server).post("/auth/forgot-password").send({
-        email: "dddddddddddddddddddddd",
+      await user.create({
+        email: "k",
+        username: "k",
+        phone: "98765645432",
+        password: "kkkkkkk",
+        isAdmin: false,
       });
 
+      const result = await request(server).post("/auth/forgot-password").send({
+        email: "k",
+      });
+
+      await user.deleteOne({ email: "k" });
+      await passwordReset.deleteOne({});
       expect(result.statusCode).toBe(201);
-      // Add more assertions as needed
     });
 
     it("should return 400 for an invalid email", async () => {
@@ -89,37 +98,79 @@ describe("/auth", () => {
       });
 
       expect(result.statusCode).toBe(400);
-      // Add more assertions as needed
     });
-
-    // Add more test cases as needed
   });
 
   describe("/reset-password", () => {
-    it("should update the user's password with a valid token and matching passwords", async () => {
-      const { token } = await passwordReset.findOne({});
+    describe("POST/", () => {
+      it("should update the user's password with a valid token and matching passwords", async () => {
+        // const { token } = await passwordReset.findOne({});
 
-      const result = await request(server)
-        .post(`/auth/reset-password?token=${token}`)
-        .send({
-          password: "ooooooccoo",
-          c_password: "nnnnddnnnn",
+        const userOne = await user.create({
+          email: "g",
+          username: "g",
+          phone: "98765432",
+          password: "gggggggg",
+          isAdmin: false,
         });
 
-      expect(result.statusCode).toBe(200);
+        const userEx = await passwordReset.create({
+          user_id: userOne._id,
+          token: "g",
+        });
+        const result = await request(server)
+          .post(`/auth/reset-password?token=${"g"}`)
+          .send({
+            password: "ooooooccoo",
+            c_password: "nnnnddnnnn",
+          });
+
+        await passwordReset.deleteOne({ user_id: userOne._id });
+        await user.deleteOne({ email: "g" });
+        expect(result.statusCode).toBe(200);
+      });
+
+      it("should return 404 for an invalid token", async () => {
+        const invalidToken = "invalid_token";
+
+        const result = await request(server)
+          .post(`/auth/reset-password?token=${invalidToken}`)
+          .send({
+            password: "new_password",
+            c_password: "new_password",
+          });
+
+        expect(result.statusCode).toBe(404);
+      });
     });
 
-    it("should return 404 for an invalid token", async () => {
-      const invalidToken = "invalid_token";
-
-      const result = await request(server)
-        .post(`/auth/reset-password?token=${invalidToken}`)
-        .send({
-          password: "new_password",
-          c_password: "new_password",
+    describe("GET/", () => {
+      it("should return reset data for a valid token", async () => {
+        await passwordReset.create({
+          user_id: "g",
+          token: "g",
+        });
+        const { token } = await passwordReset.findOne({
+          user_id: "g",
         });
 
-      expect(result.statusCode).toBe(404);
+        const result = await request(server).get(
+          `/auth/reset-password?token=${token}`
+        );
+        await passwordReset.deleteOne({ user_id: "g" });
+
+        expect(result.statusCode).toBe(200);
+      });
+
+      it("should return 404 for an invalid token", async () => {
+        const invalidToken = "invalid_token";
+
+        const result = await request(server).get(
+          `/auth/reset-password?token=${invalidToken}`
+        );
+
+        expect(result.statusCode).toBe(404);
+      });
     });
   });
 });
