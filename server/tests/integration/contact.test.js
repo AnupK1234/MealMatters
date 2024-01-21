@@ -1,12 +1,7 @@
 const request = require("supertest");
-let server;
+const Contact = require("../../model/Contact");
+let server = require("../../app");
 describe("contact-us", () => {
-  beforeEach(() => {
-    server = require("../../app");
-  });
-  afterEach(async () => {
-    await server.close();
-  });
   describe("/", () => {
     it("should return a statuscode of 200 if body have object", async () => {
       const result = await request(server).post("/contact-us/").send({
@@ -14,11 +9,14 @@ describe("contact-us", () => {
         email: "b",
         subject: "b",
       });
+
       expect(result.statusCode).toBe(200);
+      await Contact.deleteOne({ name: "b" });
     });
 
     it("should return a statuscode of 400 if no body is send", async () => {
       const result = await request(server).post("/contact-us/").send({});
+
       expect(result.statusCode).toBe(400);
     });
   });
