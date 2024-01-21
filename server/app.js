@@ -26,8 +26,10 @@ app.use(Routes);
 /**
  * connect to db then start server
 //  */
+const environment = process.env.ENVIRONMENT || "development";
 dbConnect(() => {
-  if (process.env.ENVIRONMENT && process.env.ENVIRONMENT !== "test") {
+  if (environment && environment !== "test") {
+    console.log(environment, "env");
     app.listen(process.env.PORT, () => {
       console.log(`Server is running on port ${process.env.PORT}`);
     });
