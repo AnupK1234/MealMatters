@@ -47,7 +47,7 @@ export default function Navbar() {
           {navbar && (<ul className="absolute bg-[#000b] z-50 top-full w-full py-5 lg:py-0 lg:relative lg:w-4/5 lg:bg-transparent lg:max-w-4xl lg:pr-4 flex-col lg:flex-row flex items-center  lg:justify-between">
             <li className="my-5 lg:my-0">
               <select
-                className="text-[#000000] hover:scale-105 hover:text-[#ff914d] transition py-1 px-2 rounded-lg text-[1.25rem] font-[600]"
+                className="text-[#000000] hover:scale-105 transition py-1 px-2 rounded-lg text-[1.25rem] font-[600]"
                 onChange={handleChange}
               >
                 <option value="/">User</option>
@@ -58,7 +58,7 @@ export default function Navbar() {
             <li className="my-5 lg:my-0">
               <a
                 href="https://rzp.io/l/aK0bXinyA"
-                className="text-[#fff] lg:text-[#000000] block hover:text-[#ff914d] hover:scale-110 transition text-[1.25rem] font-[600]"
+                className="text-[#fff] lg:text-[#000000] block hover:scale-110 transition text-[1.25rem] font-[600]"
               >
                 Donate
               </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
             <li className="my-5 lg:my-0">
               <Link
                 to="/about"
-                className="text-[#fff] lg:text-[#000000] block hover:text-[#ff914d] hover:scale-110 transition text-[1.25rem] font-[600]"
+                className="text-[#fff] lg:text-[#000000] block hover:scale-110 transition text-[1.25rem] font-[600]"
               >
                 About Us
               </Link>
@@ -75,13 +75,13 @@ export default function Navbar() {
             <li className="my-5 lg:my-0">
               <Link
                 to="/contact"
-                className="text-[#fff] lg:text-[#000000] block hover:text-[#ff914d] hover:scale-110 transition text-[1.25rem] font-[600]"
+                className="text-[#fff] lg:text-[#000000] block hover:scale-110 transition text-[1.25rem] font-[600]"
               >
                 Contact Us
               </Link>
             </li>
             {!auth ? (
-              <li className="my-5 lg:my-0 bg-[#ff914d] text-[#000000] hover:text-[#ff914d] transition border-0 hover:bg-[#fff] rounded-full px-6 py-1 pb-2 flex items-center">
+              <li className="my-5 lg:my-0 bg-[#ff914d] text-[#000000] transition border-0 hover:bg-[#fff] rounded-full px-6 py-1 pb-2 flex items-center">
                 <Link
                   to="/login"
                   className="text-[1.2rem] font-[600]"
