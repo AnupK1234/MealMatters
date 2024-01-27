@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer className="text-center dark:bg-blue-500 lg:text-left mt-10 w-full">
       <div className="container p-6 mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-2">
-          <div className="mb-6 justify-self-start">
+        <div className="flex justify-around flex-col sm:flex-row">
+          <div className="mb-6 flex flex-col text-center">
             <ul className="mb-0 list-none">
               <li>
                 <Link to="/" className="text-neutral-800 dark:text-neutral-200">
@@ -37,7 +37,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="mb-6 justify-self-end">
+          <div className="flex flex-col items-center text-center">
             <h5 className="mb-2.5 font-bold uppercase text-neutral-800 dark:text-neutral-200">
               Contact Us
             </h5>
