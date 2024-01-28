@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Donors = () => {
-  return (
-    <div className='text-3xl font-semibold'>
-      Donors
-    </div>
-  )
-}
+  return <div className="text-3xl font-semibold">Donors</div>;
+};
 
-export default Donors
+export default Donors;
