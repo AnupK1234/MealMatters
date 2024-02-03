@@ -104,7 +104,8 @@ export default function Navbar() {
             ) : null}
             {auth && auth ? (
               <div
-                onClick={handleShow}
+                onmousemove={handleShow}
+                onmouseout={handleShow}
                 className="bg-white w-10 h-10 flex items-center justify-center mr-10 rounded-full"
               >
                 <img
@@ -117,7 +118,7 @@ export default function Navbar() {
               <div className="absolute top-10 right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
                 <h1 className="font-sans font-bold">Hi {username}!</h1>
                 <Link
-                  to="/profile"
+                  to="/dashboard"
                   className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
                 >
                   Profile
