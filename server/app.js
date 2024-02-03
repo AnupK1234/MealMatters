@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const dbConnect = require("./config/connect.js");
 const Routes = require("./routes/index.js");
-const globalErrorHandlingMiddleware = require("./middlewares/globalErrorHandlingMiddleware.js");
+const MongoErrorHandlingMiddleware = require("./middlewares/MongoError.js");
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 /** 
  * Global error handling middleware (issue #35)
  */
-app.use(globalErrorHandlingMiddleware);
+app.use(MongoErrorHandlingMiddleware);
 
 /**
  * Routes
