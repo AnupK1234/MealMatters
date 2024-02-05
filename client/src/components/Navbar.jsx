@@ -106,7 +106,7 @@ export default function Navbar() {
               <div
                 onClick={handleShow}
                 onMouseEnter={() => setShow(true)}
-                onMouseLeave={() => setShow(false)}
+                onMouseLeave={() => setTimeout(() => setShow(false), 2000)}
                 className="bg-white w-10 h-10 flex items-center justify-center mr-10 rounded-full"
               >
                 <img
