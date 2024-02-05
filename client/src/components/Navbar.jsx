@@ -104,8 +104,9 @@ export default function Navbar() {
             ) : null}
             {auth && auth ? (
               <div
-                onmousemove={handleShow}
-                onmouseout={handleShow}
+                onClick={handleShow}
+                onMouseEnter={() => setShow(true)}
+                onMouseLeave={() => setShow(false)}
                 className="bg-white w-10 h-10 flex items-center justify-center mr-10 rounded-full"
               >
                 <img
