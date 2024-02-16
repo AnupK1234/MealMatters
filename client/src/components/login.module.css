@@ -1,9 +1,5 @@
 .errorMessageCon{
-    display: flex;
-    position: absolute;
-    left: 50%;
-    top: 5rem;
-    transform: translate(-50%, 20%);
+    top: -13rem !important;
 }
 .errorMessage{
     height: 70px;
