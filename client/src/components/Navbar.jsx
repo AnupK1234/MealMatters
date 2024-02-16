@@ -61,16 +61,6 @@ export default function Navbar() {
         {navbar && (
           <ul className="absolute bg-[#000b] z-50 top-full w-full py-5 lg:py-0 lg:relative lg:w-4/5 lg:bg-transparent lg:max-w-4xl lg:pr-4 flex-col lg:flex-row flex items-center  lg:justify-between">
             <li className="my-5 lg:my-0">
-              <select
-                className="text-[#000000] hover:scale-105 transition py-1 px-2 rounded-lg text-[1.25rem] font-[600]"
-                onChange={handleChange}
-              >
-                <option value="/">User</option>
-                <option value="/dashboard">Dashboard</option>
-                <option value="/inventory">Inventory</option>
-              </select>
-            </li>
-            <li className="my-5 lg:my-0">
               <a
                 href="https://rzp.io/l/aK0bXinyA"
                 className="text-[#fff] lg:text-[#000000] block hover:scale-110 transition text-[1.25rem] font-[600]"
