@@ -1,0 +1,8 @@
+addReviewers: true
+
+addAssignees: false
+
+reviewers:
+  - AnupK1234
+
+numberOfReviewers: 1
