@@ -39,8 +39,8 @@ function Home() {
           transition={{
             duration: 0.5,
             type: "spring",
-            stiffness: 80,
-            delay: 0,
+            stiffness: 110,
+            delay: 0.5,
           }}
           className="div1 mt-5 mb-20 lg:mb-0 flex items-center flex-1 flex-col sm:flex-row lg:flex-col"
         >
@@ -62,6 +62,7 @@ function Home() {
             duration: 0.5,
             type: "spring",
             stiffness: 80,
+            delay: 0.8,
           }}
           className="div2 mb-20 lg:mb-0 flex flex-col items-center flex-1"
         >
@@ -86,8 +87,8 @@ function Home() {
           transition={{
             duration: 0.5,
             type: "sring",
-            stiffness: 80,
-            delay: 0,
+            stiffness: 110,
+            delay: 0.5,
           }}
           className="div3 mb-20 lg:mb-0 lg:mr-5 flex flex-col items-center flex-1"
         >
