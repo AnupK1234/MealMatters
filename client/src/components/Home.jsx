@@ -28,10 +28,10 @@ function Home() {
           */}
           <Lottie
             animationData={nutritionAnimation}
-            style={{ width: "30rem" }}
-            className="lg:mt-16 lg:mb-32"
+            style={{ width: "38rem" }}
+            className="lg:mt-16 lg:mb-32 absolute ml-9"
           />
-          <div className="relative sm:-left-10 lg:left-0 lg:mt-20">
+          <div className="relative sm:-left-10 lg:left-0 lg:mt-[34rem]">
             <h1 className="head pt-10 pb-5">Businesses can donate</h1>
             <p className="max-w-sm mx-auto">
               Meal Matters makes it easier for organization to register and
@@ -49,11 +49,13 @@ function Home() {
           /> */}
           <Lottie
             animationData={groceryAnimation}
-            className="lg:mt-60"
-            style={{ width: "20rem" }}
+            className="lg:mt-40 absolute"
+            style={{ width: "30rem" }}
           />
           <div>
-            <h1 className="head pt-10 pb-5">Students won't go hungry</h1>
+            <h1 className="head pt-8 pb-5 mt-[36rem]">
+              Students won't go hungry
+            </h1>
             <p className="max-w-sm mx-auto">
               We ensure that students who need financial support will never have
               to worry their next meal.
