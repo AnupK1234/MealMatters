@@ -6,6 +6,9 @@ import HP3 from "../assets/HomePage3.png";
 import HP4 from "../assets/Snap-1.png";
 import Footer from "./Footer.jsx";
 import "./Home.css";
+import Lottie from "lottie-react";
+import groceryAnimation from "../assets/grocery_animation.json";
+import nutritionAnimation from "../assets/nurition_animation.json";
 
 function Home() {
   return (
@@ -20,27 +23,34 @@ function Home() {
 
       <div className="parent flex justify-between flex-col lg:flex-row lg:py-10">
         <div className="div1 mt-5 mb-20 lg:mb-0 flex items-center flex-1 flex-col sm:flex-row lg:flex-col">
-          <img
-            src={HP1}
-            alt="Image 1"
-            width={`${400}rem`}
-            className="mt-5"
+          {/*
+          <img src={HP1} alt="Image 1" width={`${400}rem`} className="mt-5" />
+          */}
+          <Lottie
+            animationData={nutritionAnimation}
+            style={{ width: "30rem" }}
+            className="lg:mt-16 lg:mb-32"
           />
           <div className="relative sm:-left-10 lg:left-0 lg:mt-20">
             <h1 className="head pt-10 pb-5">Businesses can donate</h1>
             <p className="max-w-sm mx-auto">
-              Meal Matters makes it easier for organization to register and track
-              food donations.
+              Meal Matters makes it easier for organization to register and
+              track food donations.
             </p>
           </div>
         </div>
 
         <div className="div2 mb-20 lg:mb-0 flex flex-col items-center flex-1">
-          <img
+          {/*<img
             src={HP2}
             alt="Image 2"
             width={`${380}rem`}
             className="lg:mt-80 lg:mb-40"
+          /> */}
+          <Lottie
+            animationData={groceryAnimation}
+            className="lg:mt-60"
+            style={{ width: "20rem" }}
           />
           <div>
             <h1 className="head pt-10 pb-5">Students won't go hungry</h1>
@@ -58,7 +68,9 @@ function Home() {
             className="lg:mt-20 lg:mb-64"
           />
           <div>
-            <h1 className="head px-5 pt-5">Schools and Colleges can obtain resources</h1>
+            <h1 className="head px-5 pt-5">
+              Schools and Colleges can obtain resources
+            </h1>
             <p className="max-w-sm py-5 mx-auto">
               Meal Matters aids educational instituties to connect with
               restaurants and delivery partners for food donations.
