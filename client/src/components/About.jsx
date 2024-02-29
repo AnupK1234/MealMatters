@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import OurMission from "../assets/OurMission.jpg";
 import HowItWorks from "../assets/HowItWorks.jpg";
 import JoinUs from "../assets/JoinUs.jpg";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -11,9 +12,33 @@ export default function About() {
       <Navbar />
       <div className="bg-transparent py-10 w-full">
         <div className="container mx-auto px-4">
-          <div className="text-5xl font-bold mb-6">About Us</div>
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              type: "spring",
+              stiffness: 80,
+              delay: 0,
+            }}
+            className="text-5xl font-bold mb-6"
+          >
+            About Us
+          </motion.div>
           <div className="flex flex-col gap-6 mt-10">
-            <div className="flex flex-col-reverse gap-4 md:flex-row">
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 80,
+                delay: 0.5,
+              }}
+              className="flex flex-col-reverse gap-4 md:flex-row"
+            >
               <div className="bg-[#f2f2f2a5] border-s-4 border-[#4cc6ec] shadow-lg rounded-md py-4 px-4 md:w-3/4">
                 <h1 className="text-2xl font-bold mb-4 text-[#296b7f]">
                   Our Mission
@@ -30,8 +55,19 @@ export default function About() {
               <div className="rounded-md shadow-lg overflow-hidden md:w-1/4 flex items-start">
                 <img className="w-full" src={OurMission} alt="" />
               </div>
-            </div>
-            <div className="flex flex-col gap-4 md:flex-row">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 80,
+                delay: 1,
+              }}
+              className="flex flex-col gap-4 md:flex-row"
+            >
               <div className="rounded-md shadow-lg overflow-hidden md:w-1/4 flex items-start">
                 <img className="w-full" src={HowItWorks} alt="" />
               </div>
@@ -50,8 +86,19 @@ export default function About() {
                   students.
                 </p>
               </div>
-            </div>
-            <div className="flex flex-col-reverse gap-4 md:flex-row">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 80,
+                delay: 0.2,
+              }}
+              className="flex flex-col-reverse gap-4 md:flex-row"
+            >
               <div className="bg-[#f2f2f2a5] border-s-4 border-[#4cc6ec] shadow-lg rounded-md py-4 px-4 md:w-3/4">
                 <h2 className="text-2xl font-bold mb-4 text-[#296b7f]">
                   Join Us
@@ -70,9 +117,20 @@ export default function About() {
               <div className="rounded-md shadow-lg bg-opacity-80 overflow-hidden md:w-1/4 flex items-start">
                 <img className="w-full" src={JoinUs} alt="" />
               </div>
-            </div>
+            </motion.div>
           </div>
-          <div className="mt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              type: "spring",
+              stiffness: 80,
+              delay: 0.2,
+            }}
+            className="mt-8"
+          >
             <p className="text-lg font-medium bg-[#f2f2f2a5] border-b-4 border-[#4cc6ec] shadow-lg rounded-md px-4 py-6">
               Join us in our mission to eliminate student food insecurity and
               make a positive impact on the lives of students across the
@@ -80,7 +138,7 @@ export default function About() {
               access to nutritious meals and the opportunity to thrive
               academically.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
       <Footer />
