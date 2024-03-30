@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Backend-MealMatters",
   "main": "app.js",
+  "engines": {
+    "node": "18.16.0"
+  },
   "scripts": {
     "start": "nodemon app.js",
     "test": "jest --watchAll --verbose --detectOpenHandles"

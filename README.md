@@ -14,6 +14,12 @@ MealMatters is a webapp designed to overcome student food insecurity by connecti
     <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white">
 </p>
 
+## Versions Used
+
+- Node.js: v18.16.0
+- React: v18.2.0
+
+
 ## Configure and run on local environment
 **Project directory/folder structure:**
 * client (Frontend) : This folder contains all the code related to Frontend part.
@@ -73,6 +79,10 @@ npm start
 MONGO_URL = mongodb+srv:<YOUR_MONGODB-ATLAS_CONNECTION_STRING_URL>
 PORT = 5000
 JWT_SECRET = <YOUR_SECRET_KEY>
+SMPT_MAIL = <YOUR_SMPT_MAIL>
+SMPT_PASSWORD = <YOUR_SMPT_PASSWORD>
+SMPT_HOST = "smtp.gmail.com"
+SMPT_PORT = "587"
 ```
 Refer this image for MONGODB-ATLAS_CONNECTION_STRING_URL : [Link](https://postimg.cc/6TWbMF1q)
 
