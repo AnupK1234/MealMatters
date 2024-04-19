@@ -61,6 +61,14 @@ export default function Navbar() {
         {navbar && (
           <ul className="absolute bg-[#000b] z-50 top-full w-full py-5 lg:py-0 lg:relative lg:w-4/5 lg:bg-transparent lg:max-w-4xl lg:pr-4 flex-col lg:flex-row flex items-center  lg:justify-between">
             <li className="my-5 lg:my-0">
+              <Link
+                to="http://localhost:8501/"
+                className="text-[#fff] lg:text-[#000000] block hover:scale-110 transition text-[1.25rem] font-[600]"
+              >
+                Get recommendation
+              </Link>
+            </li>
+            <li className="my-5 lg:my-0">
               <a
                 href="https://rzp.io/l/aK0bXinyA"
                 className="text-[#fff] lg:text-[#000000] block hover:scale-110 transition text-[1.25rem] font-[600]"
