@@ -9,9 +9,13 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <>
+      {/* Including Navbar */}
       <Navbar />
+
+      {/* Main content wrapper with transparent background */}
       <div className="bg-transparent py-10 w-full">
         <div className="container mx-auto px-4">
+          {/* Animated title section */}
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +30,10 @@ export default function About() {
           >
             About Us
           </motion.div>
+
+          {/* Content sections */}
           <div className="flex flex-col gap-6 mt-10">
+            {/* Mission Section */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -53,9 +60,11 @@ export default function About() {
                 </p>
               </div>
               <div className="rounded-md shadow-lg overflow-hidden md:w-1/4 flex items-start">
-                <img className="w-full" src={OurMission} alt="" />
+                <img className="w-full" src={OurMission} alt="Our Mission" />
               </div>
             </motion.div>
+
+            {/* How It Works Section */}
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -69,7 +78,7 @@ export default function About() {
               className="flex flex-col gap-4 md:flex-row"
             >
               <div className="rounded-md shadow-lg overflow-hidden md:w-1/4 flex items-start">
-                <img className="w-full" src={HowItWorks} alt="" />
+                <img className="w-full" src={HowItWorks} alt="How It Works" />
               </div>
               <div className="bg-[#f2f2f2a5] border-e-4 border-[#4bc196] shadow-lg rounded-md py-4 px-4 md:w-3/4">
                 <h2 className="text-2xl font-bold mb-4 text-[#358a6b]">
@@ -87,6 +96,8 @@ export default function About() {
                 </p>
               </div>
             </motion.div>
+
+            {/* Join Us Section */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -115,10 +126,12 @@ export default function About() {
                 </p>
               </div>
               <div className="rounded-md shadow-lg bg-opacity-80 overflow-hidden md:w-1/4 flex items-start">
-                <img className="w-full" src={JoinUs} alt="" />
+                <img className="w-full" src={JoinUs} alt="Join Us" />
               </div>
             </motion.div>
           </div>
+
+          {/* Call to Action */}
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,6 +154,8 @@ export default function About() {
           </motion.div>
         </div>
       </div>
+
+      {/* Including Footer */}
       <Footer />
     </>
   );
