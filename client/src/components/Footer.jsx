@@ -3,25 +3,33 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="text-center dark:bg-blue-500 lg:text-left mt-10 w-full">
-      <div className="container p-6 mx-auto">
+    <footer className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-8 w-full">
+      <div className="container mx-auto px-6">
         <div className="flex justify-around flex-col sm:flex-row">
-          <div className="mb-6 flex flex-col text-center">
-            <ul className="mb-0 list-none">
+          {/* Links Section */}
+          <div className="mb-6 sm:mb-0">
+            <h5 className="text-lg font-bold uppercase mb-4">Explore</h5>
+            <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-neutral-800 dark:text-neutral-200">
+                <Link
+                  to="/"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
                   Mission
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-neutral-800 dark:text-neutral-200">
+                <Link
+                  to="/"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
                   Partners
                 </Link>
               </li>
               <li>
                 <Link
                   to="/about"
-                  className="text-neutral-800 dark:text-neutral-200"
+                  className="hover:text-yellow-300 transition duration-300"
                 >
                   About Us
                 </Link>
@@ -29,7 +37,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/contact"
-                  className="text-neutral-800 dark:text-neutral-200"
+                  className="hover:text-yellow-300 transition duration-300"
                 >
                   Contact Us
                 </Link>
@@ -37,22 +45,23 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="flex flex-col items-center text-center">
-            <h5 className="mb-2.5 font-bold uppercase text-neutral-800 dark:text-neutral-200">
-              Contact Us
-            </h5>
-
-            <ul className="mb-0 list-none">
+          {/* Contact Section */}
+          <div className="flex flex-col items-center sm:items-start">
+            <h5 className="text-lg font-bold uppercase mb-4">Contact Us</h5>
+            <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:contact@mealmatters.com"
-                  className="text-neutral-800 dark:text-neutral-200"
+                  className="hover:text-yellow-300 transition duration-300"
                 >
                   contact@mealmatters.com
                 </a>
               </li>
               <li>
-                <a href="#!" className="text-neutral-800 dark:text-neutral-200">
+                <a
+                  href="tel:+91123456789"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
                   +91 123456789
                 </a>
               </li>
@@ -60,11 +69,18 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-neutral-200 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
-        © 2023 Copyright:
-        <a className="text-neutral-800 dark:text-neutral-400" href="#">
-          MealMatters
-        </a>
+
+      {/* Copyright Section */}
+      <div className="mt-8 bg-gray-900 py-4 text-center">
+        <p className="text-sm">
+          © 2024 Copyright:
+          <a
+            className="text-yellow-300 ml-1 hover:text-yellow-500 transition duration-300"
+            href="#"
+          >
+            MealMatters
+          </a>
+        </p>
       </div>
     </footer>
   );
