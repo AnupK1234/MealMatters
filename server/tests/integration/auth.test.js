@@ -1,7 +1,7 @@
 const request = require("supertest");
 let server = require("../../app");
 const user = require("../../model/User.js");
-const passwordReset = require("../../model/PasswordReset.js");
+const passwordReset = require("../../model/passwordReset.js");
 
 describe("/auth", () => {
   describe("/register", () => {
