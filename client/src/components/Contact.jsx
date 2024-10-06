@@ -119,7 +119,7 @@ export default function Contact() {
                 <div className="mb-4">
                   <label
                     htmlFor="Message"
-                    className="block text-xl font-medium text-left mb-2"
+                    className="block text-xl font-medium text-left   mb-2"
                   >
                     Message
                   </label>
