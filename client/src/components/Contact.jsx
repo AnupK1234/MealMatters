@@ -22,7 +22,7 @@ export default function Contact() {
     setSubmitted(true);
     e.preventDefault();
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/contact-us`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || `https://mealmatters-backend.onrender.com`}/contact-us`, {
         headers: {
           "Content-Type": "application/json",
         },
