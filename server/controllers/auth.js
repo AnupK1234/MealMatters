@@ -1,7 +1,7 @@
 const User = require("../model/User.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken"); // authentication, login , authorization - is he an admin or not?
-const passwordReset = require("../model/passwordReset.js");
+const passwordReset = require("../model/PasswordReset.js");
 const mailer = require("../helper/mailer");
 require("dotenv").config();
 
