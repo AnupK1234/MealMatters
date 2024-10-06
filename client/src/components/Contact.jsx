@@ -54,12 +54,12 @@ export default function Contact() {
           <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
+              <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
               <form method="POST" onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-4">
                   <label
                     htmlFor="Name"
-                    className="block text-lg font-medium mb-2"
+                    className="block text-xl font-medium text-left mb-2"
                   >
                     Name
                   </label>
@@ -79,7 +79,7 @@ export default function Contact() {
                 <div className="mb-4">
                   <label
                     htmlFor="Email"
-                    className="block text-lg font-medium mb-2"
+                    className="block text-xl font-medium text-left mb-2"
                   >
                     Email
                   </label>
@@ -99,7 +99,7 @@ export default function Contact() {
                 <div className="mb-4">
                   <label
                     htmlFor="Subject"
-                    className="block text-lg font-medium mb-2"
+                    className="block text-xl font-medium text-left mb-2"
                   >
                     Subject
                   </label>
@@ -119,7 +119,7 @@ export default function Contact() {
                 <div className="mb-4">
                   <label
                     htmlFor="Message"
-                    className="block text-lg font-medium mb-2"
+                    className="block text-xl font-medium text-left mb-2"
                   >
                     Message
                   </label>

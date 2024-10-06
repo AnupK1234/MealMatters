@@ -47,10 +47,10 @@ export default function About() {
               className="flex flex-col-reverse gap-4 md:flex-row"
             >
               <div className="bg-[#f2f2f2a5] border-s-4 border-[#4cc6ec] shadow-lg rounded-md py-4 px-4 md:w-3/4">
-                <h1 className="text-2xl font-bold mb-4 text-[#296b7f]">
+                <h1 className="text-3xl font-bold mb-4 text-[#296b7f]">
                   Our Mission
                 </h1>
-                <p className="text-lg">
+                <p className="text-2xl">
                   At our student food insecurity project, we are dedicated to
                   addressing the issue of hunger among students. Our mission is
                   to provide a platform that connects students, colleges, and
@@ -59,7 +59,7 @@ export default function About() {
                   well-being and academic success.
                 </p>
               </div>
-              <div className="rounded-md shadow-lg overflow-hidden md:w-1/4 flex items-start">
+              <div className="rounded-lg shadow-xl overflow-hidden md:w-1/4 flex items-start">
                 <img className="w-full" src={OurMission} alt="Our Mission" />
               </div>
             </motion.div>
@@ -81,10 +81,10 @@ export default function About() {
                 <img className="w-full" src={HowItWorks} alt="How It Works" />
               </div>
               <div className="bg-[#f2f2f2a5] border-e-4 border-[#4bc196] shadow-lg rounded-md py-4 px-4 md:w-3/4">
-                <h2 className="text-2xl font-bold mb-4 text-[#358a6b]">
+                <h2 className="text-3xl font-bold mb-4 text-[#358a6b]">
                   How It Works
                 </h2>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Our platform enables students to easily find nearby
                   restaurants that offer free food. Participating colleges
                   provide students with free coupons that can be redeemed at
@@ -111,10 +111,10 @@ export default function About() {
               className="flex flex-col-reverse gap-4 md:flex-row"
             >
               <div className="bg-[#f2f2f2a5] border-s-4 border-[#4cc6ec] shadow-lg rounded-md py-4 px-4 md:w-3/4">
-                <h2 className="text-2xl font-bold mb-4 text-[#296b7f]">
+                <h2 className="text-3xl font-bold mb-4 text-[#296b7f]">
                   Join Us
                 </h2>
-                <p className="text-lg">
+                <p className="text-2xl">
                   We are always looking for passionate individuals and
                   organizations to join our cause. Whether you are a student,
                   college representative, or restaurant owner, you can make a
