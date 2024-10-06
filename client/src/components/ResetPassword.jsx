@@ -10,7 +10,7 @@ export const ResetPassword = () => {
         const queryParams = new URLSearchParams(window.location.search);
         const token = queryParams.get('token');
         console.log(token);
-        const res = await fetch(`http://localhost:5000/auth/reset-password?token=${encodeURIComponent(token)}`,{
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/reset-password?token=${encodeURIComponent(token)}`,{
           headers: {  
             'Content-Type': 'application/json',
           },

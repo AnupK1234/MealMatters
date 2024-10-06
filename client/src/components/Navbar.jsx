@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo-Ic.png";
-import { set } from "react-hook-form";
 
 export default function Navbar() {
   const navigate = useNavigate();

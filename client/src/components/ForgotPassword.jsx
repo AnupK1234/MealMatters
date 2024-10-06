@@ -5,7 +5,7 @@ export const ForgotPassword = () => {
   const handleLogin=async(e)=>{
     try {
       e.preventDefault();
-      const res = await fetch(`http://localhost:5000/auth/forgot-password`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/forgot-password`, {
         headers: {
           'Content-Type': 'application/json'
         },

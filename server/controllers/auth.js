@@ -62,8 +62,8 @@ exports.forgotPassword = async (req, res) => {
     console.log("Forgot password request body: ", req.body);
     const { email } = req.body;
     const userData = await User.findOne({ email });
-    console.log("Email: ", email);
-    console.log("User data: ", userData);
+    // console.log("Email: ", email);
+    // console.log("User data: ", userData);
     if (!userData) {
       return res.status(400).json({
         success: false,
@@ -71,7 +71,7 @@ exports.forgotPassword = async (req, res) => {
       });
     }
     const randomString = Math.random().toString(36).slice(-8);
-    const msg = `<p>Hi ${userData.username}, please click <a href="http://localhost:5173/reset-password?token=${randomString}">here</a> to reset your password.</p>`;
+    const msg = `<p>Hi ${userData.username}, please click <a href="${process.env.PROD_API || `http://localhost:5173`}/reset-password?token=${randomString}">here</a> to reset your password.</p>`;
     const PasswordReset = await passwordReset({
       user_id: userData._id,
       token: randomString,

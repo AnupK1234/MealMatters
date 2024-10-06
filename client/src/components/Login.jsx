@@ -18,7 +18,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:5000/auth/login`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/login`, {
         headers: {
           'Content-Type': 'application/json'
         },

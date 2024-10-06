@@ -17,6 +17,9 @@ import DashboardHome from "./DashboardHome";
 import Donors from "./Donors";
 import Outreach from "./Outreach";
 import Students from "./Students";
+import { Link } from "react-router-dom";
+import { ResetPassword } from "../ResetPassword";
+import { ForgotPassword } from "../ForgotPassword";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
@@ -30,7 +33,7 @@ const Dashboard = () => {
     { name: "Outreach", icon: HiMap, component: <Outreach /> },
     { name: "Inventory", icon: HiShoppingCart, component: <Inventory /> },
     { name: "Saved", icon: HiHeart, margin: true, component: <div>Saved</div> },
-    { name: "Setting", icon: HiCog, component: <div>Setting</div> },
+    { name: "Setting", icon: HiCog, component: <ForgotPassword /> },
   ];
   console.log(selectedtab);
   return (
@@ -55,6 +58,7 @@ const Dashboard = () => {
         </div>
 
         <div className=" lex flex-col gap-4  h-full  px-8 md:px-0">
+          <Link to="/">
           <h2
             className={`mb-14 text-2xl -mt-2 text-start ml-2 text-gray-900 font-semibold transition-all duration-500  ${
               open ? "" : "-translate-x-56"
@@ -62,6 +66,7 @@ const Dashboard = () => {
           >
             Mealmatters
           </h2>
+          </Link>
           {SidebarMenus?.map((menu, i) => (
             <section
               key={menu.name}
