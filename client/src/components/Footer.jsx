@@ -8,12 +8,12 @@ export default function Footer() {
         <div className="flex justify-around flex-col sm:flex-row">
           {/* Links Section */}
           <div className="mb-6 sm:mb-0">
-            <h5 className="text-lg font-bold uppercase mb-4">Explore</h5>
+            <h5 className="text-lg font-extrabold uppercase mb-5">Explore</h5>
             <ul className="space-y-3">
               <li>
                 <Link
                   to="/"
-                  className="hover:text-yellow-300 transition duration-300"
+                  className="hover:text-yellow-300 font-bold transition duration-300"
                 >
                   Mission
                 </Link>
@@ -21,7 +21,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/"
-                  className="hover:text-yellow-300 transition duration-300"
+                  className="hover:text-yellow-300 font-bold transition duration-300"
                 >
                   Partners
                 </Link>
@@ -29,7 +29,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/about"
-                  className="hover:text-yellow-300 transition duration-300"
+                  className="hover:text-yellow-300 font-bold transition duration-300"
                 >
                   About Us
                 </Link>
@@ -37,7 +37,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/contact"
-                  className="hover:text-yellow-300 transition duration-300"
+                  className="hover:text-yellow-300 font-bold transition duration-300"
                 >
                   Contact Us
                 </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:contact@mealmatters.com"
-                  className="hover:text-yellow-300 transition duration-300"
+                  className="hover:text-yellow-300 font-bold transition duration-300"
                 >
                   contact@mealmatters.com
                 </a>
@@ -60,7 +60,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+91123456789"
-                  className="hover:text-yellow-300 transition duration-300"
+                  className="hover:text-yellow-300 font-bold transition duration-300"
                 >
                   +91 123456789
                 </a>

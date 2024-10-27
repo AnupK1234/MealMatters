@@ -43,7 +43,7 @@ export default function About() {
                 <h1 className="text-3xl font-bold mb-4 text-blue-800">
                   Our Mission
                 </h1>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-2xl text-gray-700 leading-relaxed">
                   At our student food insecurity project, we are dedicated to
                   addressing the issue of hunger among students. Our mission is
                   to provide a platform that connects students, colleges, and
@@ -83,7 +83,7 @@ export default function About() {
                 <h2 className="text-3xl font-bold mb-4 text-green-700">
                   How It Works
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-2xl text-gray-700 leading-relaxed">
                   Our platform enables students to easily find nearby
                   restaurants that offer free food. Participating colleges
                   provide students with free coupons that can be redeemed at
@@ -111,7 +111,7 @@ export default function About() {
                 <h2 className="text-3xl font-bold mb-4 text-blue-800">
                   Join Us
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-2xl text-gray-700 leading-relaxed">
                   We are always looking for passionate individuals and
                   organizations to join our cause. Whether you are a student,
                   college representative, or restaurant owner, you can make a
@@ -143,7 +143,7 @@ export default function About() {
             }}
             className="mt-12"
           >
-            <p className="text-xl font-semibold bg-white border-b-4 border-blue-400 shadow-lg rounded-lg px-6 py-8 text-center text-gray-800 transform hover:scale-105 transition-transform duration-300">
+            <p className="text-xl font-bold bg-white border-b-4 border-blue-400 shadow-lg rounded-lg px-6 py-8 text-center text-gray-800 transform hover:scale-105 transition-transform duration-300">
               Join us in our mission to eliminate student food insecurity and
               make a positive impact on the lives of students across the
               country. Together, we can create a future where every student has

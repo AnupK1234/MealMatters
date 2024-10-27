@@ -51,7 +51,7 @@ export default function Login() {
       <Navbar />
       <div className="flex justify-center items-center h-screen bg-gradient-to-r font-sans">
         <div className="relative w-full max-w-md bg-white p-10 rounded-lg border border-black hover:border-2 shadow-lg">
-          <h2 className="text-4xl font-semibold text-center mb-8 text-black">
+          <h2 className="text-4xl font-bold text-center mb-8 text-black">
             Welcome to MealMatters
           </h2>
           <form onSubmit={handleLogin}>
@@ -61,14 +61,14 @@ export default function Login() {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full h-12 bg-transparent outline-none text-black placeholder-gray-500"
+                  className="w-full h-12 bg-transparent font-bold outline-none text-black placeholder-gray-500"
                   style={{ fontSize: '16px' }}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
             <div className="mb-6">
-              <div className="flex items-center border-b border-gray-300">
+              <div className="flex items-center font-bold border-b border-gray-300">
                 <i className="fa fa-unlock-alt text-lg mr-3 text-gray-500"></i>
                 <input
                   type="password"
@@ -81,7 +81,7 @@ export default function Login() {
             </div>
             <div className="mb-6">
               <button
-                className="w-full h-12 cursor-pointer font-semibold text-lg text-center border-2 border-purple-600 rounded-[25px] bg-pink-300 hover:text-white hover:bg-purple-600"
+                className="w-full h-12 cursor-pointer font-bold text-lg text-center border-2 border-purple-600 rounded-[25px] bg-pink-300 hover:text-white hover:bg-purple-600"
               >
                 Login
               </button>
@@ -106,8 +106,8 @@ export default function Login() {
               </button>
             </div>
             <div className="flex justify-between">
-            <Link to="/forgot-password" className="text-sm text-gray-600 cursor-pointer">Forgot Password?</Link>
-              <Link to="/signup" className="text-sm text-gray-600">
+            <Link to="/forgot-password" className="text-sm text-gray-600 font-bold cursor-pointer">Forgot Password?</Link>
+              <Link to="/signup" className="text-sm font-bold text-gray-600">
                 Sign Up
               </Link>
             </div>

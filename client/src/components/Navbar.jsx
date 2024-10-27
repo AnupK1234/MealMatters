@@ -62,7 +62,7 @@ export default function Navbar() {
             <li className="my-5 lg:my-0">
               <a
                 href="https://rzp.io/l/aK0bXinyA"
-                className="text-[#fff] lg:text-[#000000] block hover:scale-110 transition text-[1.25rem] font-[600]"
+                className="text-[#fff] lg:text-[#000000]  block hover:scale-110 transition text-[1.25rem] font-[600]"
               >
                 Donate
               </a>
