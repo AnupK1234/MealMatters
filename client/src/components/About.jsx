@@ -9,9 +9,13 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <>
+      {/* Including Navbar */}
       <Navbar />
+
+      {/* Main content wrapper with gradient background */}
       <div className="bg-gradient-to-b from-blue-50 via-white to-blue-50 py-10 w-full">
         <div className="container mx-auto px-4">
+          {/* Animated title section */}
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -20,13 +24,15 @@ export default function About() {
               duration: 0.6,
               type: "spring",
               stiffness: 80,
-              delay: 0,
             }}
             className="text-5xl font-extrabold text-center text-blue-700 mb-8"
           >
             About Us
           </motion.div>
+
+          {/* Content sections */}
           <div className="flex flex-col gap-10 mt-12">
+            {/* Mission Section */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -60,6 +66,8 @@ export default function About() {
                 />
               </div>
             </motion.div>
+
+            {/* How It Works Section */}
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -95,6 +103,8 @@ export default function About() {
                 </p>
               </div>
             </motion.div>
+
+            {/* Join Us Section */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -131,6 +141,8 @@ export default function About() {
               </div>
             </motion.div>
           </div>
+
+          {/* Call to Action */}
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -153,6 +165,8 @@ export default function About() {
           </motion.div>
         </div>
       </div>
+
+      {/* Including Footer */}
       <Footer />
     </>
   );
