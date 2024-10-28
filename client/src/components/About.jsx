@@ -9,9 +9,13 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <>
+      {/* Including Navbar */}
       <Navbar />
+
+      {/* Main content wrapper with gradient background */}
       <div className="bg-gradient-to-b from-blue-50 via-white to-blue-50 py-10 w-full">
         <div className="container mx-auto px-4">
+          {/* Animated title section */}
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -20,13 +24,15 @@ export default function About() {
               duration: 0.6,
               type: "spring",
               stiffness: 80,
-              delay: 0,
             }}
             className="text-5xl font-extrabold text-center text-blue-700 mb-8"
           >
             About Us
           </motion.div>
+
+          {/* Content sections */}
           <div className="flex flex-col gap-10 mt-12">
+            {/* Mission Section */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -43,7 +49,7 @@ export default function About() {
                 <h1 className="text-3xl font-bold mb-4 text-blue-800">
                   Our Mission
                 </h1>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-2xl text-gray-700 leading-relaxed">
                   At our student food insecurity project, we are dedicated to
                   addressing the issue of hunger among students. Our mission is
                   to provide a platform that connects students, colleges, and
@@ -60,6 +66,8 @@ export default function About() {
                 />
               </div>
             </motion.div>
+
+            {/* How It Works Section */}
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -83,7 +91,7 @@ export default function About() {
                 <h2 className="text-3xl font-bold mb-4 text-green-700">
                   How It Works
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-2xl text-gray-700 leading-relaxed">
                   Our platform enables students to easily find nearby
                   restaurants that offer free food. Participating colleges
                   provide students with free coupons that can be redeemed at
@@ -95,6 +103,8 @@ export default function About() {
                 </p>
               </div>
             </motion.div>
+
+            {/* Join Us Section */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -111,7 +121,7 @@ export default function About() {
                 <h2 className="text-3xl font-bold mb-4 text-blue-800">
                   Join Us
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-2xl text-gray-700 leading-relaxed">
                   We are always looking for passionate individuals and
                   organizations to join our cause. Whether you are a student,
                   college representative, or restaurant owner, you can make a
@@ -131,6 +141,8 @@ export default function About() {
               </div>
             </motion.div>
           </div>
+
+          {/* Call to Action */}
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -143,7 +155,7 @@ export default function About() {
             }}
             className="mt-12"
           >
-            <p className="text-xl font-semibold bg-white border-b-4 border-blue-400 shadow-lg rounded-lg px-6 py-8 text-center text-gray-800 transform hover:scale-105 transition-transform duration-300">
+            <p className="text-xl font-bold bg-white border-b-4 border-blue-400 shadow-lg rounded-lg px-6 py-8 text-center text-gray-800 transform hover:scale-105 transition-transform duration-300">
               Join us in our mission to eliminate student food insecurity and
               make a positive impact on the lives of students across the
               country. Together, we can create a future where every student has
@@ -153,6 +165,8 @@ export default function About() {
           </motion.div>
         </div>
       </div>
+
+      {/* Including Footer */}
       <Footer />
     </>
   );

@@ -6,8 +6,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function Contact() {
+  // State to manage form submission status
   const [isSubmitted, setSubmitted] = useState(false);
 
+  // Hook to manage form and validation
   const {
     register,
     handleSubmit,
@@ -18,17 +20,21 @@ export default function Contact() {
     mode: "onChange",
   });
 
+  // Function to handle form submission
   const onSubmit = async (data, e) => {
     setSubmitted(true);
     e.preventDefault();
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || `https://mealmatters-backend.onrender.com`}/contact-us`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL || `https://mealmatters-backend.onrender.com`}/contact-us`, 
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify(data),
+        }
+      );
       const formSubmitted = await res.json();
       if (formSubmitted.statusCode === 200) {
         reset();
@@ -37,7 +43,7 @@ export default function Contact() {
         console.log(formSubmitted.message);
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error submitting the form:", error);
     }
     setSubmitted(false);
   };
@@ -46,15 +52,15 @@ export default function Contact() {
     <>
       <Navbar />
 
-      <div className="bg-transparent">
+      <div className="bg-transparent py-10">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-extrabold text-white text-center mb-12">
+          <h1 className="text-5xl font-extrabold text-blue-800 text-center mb-12">
             Contact Us
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Form Section */}
             <div className="bg-white rounded-lg shadow-xl p-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">
+              <h2 className="text-3xl font-bold text-gray-800 mb-8">
                 Get in Touch
               </h2>
               <form method="POST" onSubmit={handleSubmit(onSubmit)}>
